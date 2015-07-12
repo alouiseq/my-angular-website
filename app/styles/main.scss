@@ -2,6 +2,7 @@
 // endbower
 
 @import '_home';
+@import '_resume.scss';
 
 .browsehappy {
     margin: 0.2em 0;
@@ -23,7 +24,7 @@ body {
 
 /* Custom page header */
 .header {
-    border-bottom: 1px solid #e5e5e5;
+    // border-bottom: 1px solid #e5e5e5;
     margin-bottom: 10px;
 
     /* Make the masthead heading the same height as the navigation */
@@ -169,4 +170,8 @@ body {
         height: 25px;
         margin: 25px;
     }
+}
+
+.pointer {
+    cursor: pointer;
 }

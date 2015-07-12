@@ -9,5 +9,8 @@
  */
 angular.module('mywebsiteApp')
     .controller('ResumeCtrl', function ($scope) {
-                       
+        
+        // Activate selected page header
+        $('.nav').find('a').removeClass('active');
+        $('.resume').children('a').addClass('active');                           
     });
