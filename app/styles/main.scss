@@ -1,0 +1,172 @@
+// bower:scss
+// endbower
+
+@import '_home';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+    padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 19px;
+    }
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    height: 250px;
+    background-color: #3c3c3c;
+    color: #fff;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+}
+
+.custom-navbar {
+    height: 430px;
+    background-color: #3c3c3c;
+    border-color: #e7e7e7;
+}
+
+.active {
+    border: 2px solid #fff;
+}
+
+.nav-header {
+    color: #fff;
+    font-size: 17px;
+}
+
+.nav-headers {
+    float: right;
+}
+
+.navbar-brand {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: gray;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.nav-title {
+    color: #fff;
+    position: absolute;
+    margin-left: 50%; 
+}
+
+// @media screen and (max-width: 1030px) {
+//     .nav-title {
+//         left: 35%;
+//     }
+// }
+
+// @media screen and (max-width: 820px) {
+//     .nav-title {
+//         left: 30%;
+//     }
+// }
+
+#nav-title1 {
+    top: 140px;
+}
+
+#nav-title2 {
+    top: 193px;
+}
+
+.nav-title > h2 {
+    margin-left: -50%;
+}
+
+.navbar-toggle {
+    background-color: white;
+}
+
+.icon-bar {
+    background-color: black;
+}
+
+.foot-wrapper {
+    margin-left: 50%;
+}
+
+.navbar-footer {
+    margin-left: -47%
+}
+
+.me {
+    font-size: 17px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.footer-brand {
+    @extend .navbar-brand;
+    top: 0;
+    left: 1px;
+    width: 40px;
+    height: 40px;
+    line-height: 35px;
+    vertical-align: middle;
+}
+
+.copyright {
+    clear: both;
+    text-align: center;
+    padding-top: 14px;
+}
+
+.social-icons {
+    text-align: center;
+    img {
+        width: 25px;
+        height: 25px;
+        margin: 25px;
+    }
+}

@@ -1,0 +1,88 @@
+@media (min-width: 768px) {
+	.container {
+		max-width: 1080px !important;
+	}
+}
+
+.background-title,
+.projects-title,
+.projects-button,
+.milestones-title,
+.more-info,
+.background-body {
+	text-align: center;
+}
+
+.background-title,
+.projects-title,
+.milestones-title {
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+.background-body,
+.more-info,
+.projects-button {
+	font-size: 15px;
+}
+
+.projects-button > span,
+.more-info > div {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 5px;
+	margin: 25px 0 10px 0;
+}
+
+.more-info > div {
+	background-color: lightgray;
+	margin-bottom: 25px;
+}
+
+.project {
+	display: inline-block;
+	border: 1px solid black;
+	height: 305px;
+	width: 240px;
+	margin: 0 53px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 120px 5px; 
+}
+
+.milestones {
+	position: relative;
+}
+
+.timeline {
+	margin: 50px 0;
+}
+
+.event {
+	display: inline-block;
+	position: relative;
+	border: 1px solid black;
+	border-radius: 40px;
+	padding: 20px;
+	background-color: #61e8ec;
+	left: 1%;
+}
+
+.event + .first {	// not working
+	left: 1%;
+}
+
+.event + .second,
+.event + .third,
+.event + .fourth,
+.event + .fifth {
+	left: 60%;
+}
+
+hr.line {
+	position: absolute;
+	width: 100%;
+	top: 65%;
+	border-color: black;
+	z-index: -1;
+}
