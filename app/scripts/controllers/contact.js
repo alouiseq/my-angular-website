@@ -9,5 +9,8 @@
  */
 angular.module('mywebsiteApp')
     .controller('ContactCtrl', function ($scope) {
-                       
+
+      // Activate selected page header
+        $('.nav').find('a').removeClass('active');
+        $('.contact').children('a').addClass('active');                   
     });

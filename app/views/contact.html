@@ -1,2 +1,28 @@
 <div id="contact">
+    <article class="contact-info">
+        <h3>CONTACT INFORMATION</h3>
+        <div class="info">
+            <p class="name-text">Alouise Quiatchon</p>
+            <p class="address">San Jose, CA</p>
+            <p class="email-text">alouiseq@gmail.com</p>
+        </div>
+        <img class="self-image" src="" alt="Picture of Me" />
+    </article>
+    <article class="message-form">
+        <hr />
+        <h3 class="title">SEND A MESSAGE</h3>
+        <form class="msg-form" ng-submit="sendMessage()">
+            <label for="name" class="pointer">Name *</label><br />
+            <input id="name" class="first name" type="text" placeholder="First Name" required>
+            <input class="last name" type="text" placeholder="Last Name" required><br />
+            <label for="email" class="pointer">Email Address *</label><br />
+            <input id="email" required /><br />
+            <label for="subject" class="pointer">Subject *</label><br />
+            <input id="subject" required /><br />
+            <label for="message" class="pointer">Message *</label><br />
+            <textarea class="message" rows="7" required></textarea>
+            <button class="submit" type="submit">SEND</button>
+        </form>
+        <img class="google-maps" src="" alt="Google Maps" />
+    </article>  
 </div> 

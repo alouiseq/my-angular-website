@@ -1,0 +1,54 @@
+.contact-info > h3,
+.message-form h3 {
+    margin-bottom: 25px;
+}
+
+.name-text {
+    color: gray;
+}
+
+.info {
+    float: left;
+    font-size: 18px;
+}
+
+.self-image {
+    float: right;
+    width: 200px;
+    height: 200px;
+}
+
+.message-form {
+    clear: both;
+    padding-top: 50px;
+}
+
+.msg-form {
+    float: left;
+    width: 55%;
+    margin-bottom: 55px;
+}
+
+.google-maps {
+    float: right;
+}
+
+.name {
+    width: 49.5%;
+    margin-bottom: 25px;
+
+}
+
+.message {
+    width: 100%;
+}
+
+#email,
+#subject {
+    @extend .message;
+    margin-bottom: 25px;
+}
+
+.submit {
+    float: right;
+}
