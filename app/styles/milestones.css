@@ -1,0 +1,43 @@
+#milestones {
+    position: relative;
+}
+
+#milestones .milestones-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#milestones .timeline {
+    margin: 50px 0;
+}
+
+#milestones .event {
+    display: inline-block;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 20px;
+    background-color: #61e8ec;
+    left: 1%;
+}
+
+/*.event + .first { // not working
+    left: 1%;
+}*/
+
+#milestones span:first-child {
+    left: 1%;
+}
+
+#milestones .event {
+    left: 60%;
+}
+
+#milestones hr.line {
+    position: absolute;
+    width: 100%;
+    top: 64%;
+    border-color: black;
+    z-index: -1;
+}

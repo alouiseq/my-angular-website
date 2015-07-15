@@ -4,7 +4,7 @@
 @import '_home';
 @import '_resume.scss';
 @import '_contact.scss';
-@import 'about.scss';
+@import '_about.scss';
 
 .browsehappy {
     margin: 0.2em 0;
@@ -15,6 +15,7 @@
 
 body {
     padding: 0;
+    font-size: 15px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
