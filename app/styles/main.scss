@@ -6,6 +6,20 @@
 @import '_contact.scss';
 @import '_about.scss';
 
+body {
+    font-family: 'Bangers', cursive;
+    padding: 0;
+    font-size: 15px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.desc {
+    font-size: 20px;
+}
+
 hr {
     margin: 60px 0;
 }
@@ -23,11 +37,6 @@ hr {
     background: #ccc;
     color: #000;
     padding: 0.2em 0;
-}
-
-body {
-    padding: 0;
-    font-size: 15px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -96,6 +105,7 @@ body {
 
 .nav-headers {
     float: right;
+    margin: 5px 35px 0 0;
 }
 
 .navbar-brand {
@@ -136,7 +146,9 @@ body {
     top: 193px;
 }
 
-.nav-title > h2 {
+.nav-title > h1,
+.nav-title > h2,
+.nav-title > h3 {
     margin-left: -50%;
 }
 
@@ -153,7 +165,7 @@ body {
 }
 
 .navbar-footer {
-    margin-left: -47%
+    margin-left: -34%
 }
 
 .me {
