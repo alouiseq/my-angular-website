@@ -1,14 +1,16 @@
 #about {
-	.title {
-		text-align: center;
+
+	.career-growth {
+		position: relative;
 	}
 
-	.facts-list > ol {
-		margin-left: 50%;
+	h3.title {
+		text-align: center;
+		margin-bottom: 20px;
 	}
 
 	.facts-list {
-		margin-left: -40%
+		text-align: center;
 	}
 
 	.company {
@@ -19,16 +21,41 @@
 		border: 1px solid black;
 		text-align: center;
 		padding: 20px;
-		margin-bottom: 80px;
 		background-color: gold;
 	}
 
-	.company:nth-child(2),
-	.company:nth-child(3) {
+	.company.one,
+	.company.two {
 		margin-right: 5%;
 	}
 
 	p.title {
 		margin-bottom: 30%;
+	}
+
+	.left-arrow {
+		position: absolute;
+		left: -80px;
+		top: 210px;
+		border-top: 25px solid transparent;
+		border-right: 45px solid gray;
+		border-bottom: 25px solid transparent;
+	}
+
+	.left-arrow:hover {
+		border-right: 45px solid black;
+	}
+
+	.right-arrow {
+		position: absolute;
+		right: -80px;
+		top: 210px;
+		border-top: 25px solid transparent;
+		border-left: 45px solid gray;
+		border-bottom: 25px solid transparent;
+	}
+
+	.right-arrow:hover {
+		border-left: 45px solid black;
 	}
 }

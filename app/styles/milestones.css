@@ -1,5 +1,6 @@
 #milestones {
     position: relative;
+    margin-bottom: 80px;
 }
 
 #milestones .milestones-title {
@@ -22,11 +23,7 @@
     left: 1%;
 }
 
-/*.event + .first { // not working
-    left: 1%;
-}*/
-
-#milestones span:first-child {
+#milestones span:nth-child(2) {
     left: 1%;
 }
 
@@ -37,7 +34,7 @@
 #milestones hr.line {
     position: absolute;
     width: 100%;
-    top: 64%;
+    top: 28%;
     border-color: black;
     z-index: -1;
 }
