@@ -13,22 +13,43 @@
     margin: 50px 0;
 }
 
-#milestones .event {
+@mixin bubble {
     display: inline-block;
-    position: relative;
     border: 1px solid black;
     border-radius: 40px;
     padding: 20px;
     background-color: #61e8ec;
+}
+
+#milestones .event {
+    @include bubble;
+    position: relative;
     left: 1%;
 }
 
-#milestones span:nth-child(2) {
+#milestones .custom-tip {
+    @include bubble;
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border-radius: 111px;
+    text-align: center;
+
+    div {
+        margin-top: 30%;
+    }
+}
+
+#milestones .custom-tip > span {
+    vertical-align: middle;
+}
+
+#milestones #index-0 {
     left: 1%;
 }
 
 #milestones .event {
-    left: 60%;
+    left: 850%;
     font-size: 20px;
 }
 
@@ -38,4 +59,8 @@
     top: 28%;
     border-color: black;
     z-index: -1;
+}
+
+.event-time {
+    display: inline-block;
 }

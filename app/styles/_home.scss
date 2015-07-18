@@ -1,53 +1,72 @@
-@media (min-width: 768px) {
-	.container {
-		max-width: 1080px !important;
+#home {
+
+	.background-title,
+	.projects-title,
+	.projects-button,
+	.more-info,
+	.background-body {
+		text-align: center;
 	}
-}
 
-.background-title,
-.projects-title,
-.projects-button,
-.more-info,
-.background-body {
-	text-align: center;
-}
+	.background-title,
+	.projects-title {
+		margin-bottom: 20px;
+	}
 
-.background-title,
-.projects-title {
-	font-size: 24px;
-	margin-bottom: 20px;
-}
+	.more-info {
+		font-size: 18px;
+	}
 
-.background-body,
-.more-info,
-.projects-button {
-	font-size: 15px;
-}
+	.projects-button {
+		.btn {
+			margin: 25px 0 10px 0;
+		}
+		.btn:hover {
+			background-color: darkgray;
+		}
+	}
 
-.more-info {
-	font-size: 18px;
-}
 
-.projects-button > span,
-.more-info > div {
-	display: inline-block;
-	border: 1px solid black;
-	padding: 5px;
-	margin: 25px 0 10px 0;
-}
+	.more-info > div {
+		display: inline-block;
+		border: 1px solid black;
+		padding: 5px;
+		margin: 25px 0 10px 0;
+	}
 
-.more-info > div {
-	background-color: lightgray;
-	margin-bottom: 25px;
-}
+	.more-info > div {
+		background-color: lightgray;
+		margin-bottom: 25px;
+	}
 
-.project {
-	display: inline-block;
-	border: 1px solid black;
-	height: 305px;
-	width: 240px;
-	margin: 0 53px;
-	text-align: center;
-	vertical-align: middle;
-	padding: 120px 5px; 
+	.project {
+		display: inline-block;
+		border: 1px solid black;
+		height: 305px;
+		width: 240px;
+		margin: 0 53px;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.projects-list {
+		#site {
+			background-image: url("/images/site-image.jpg"); 
+			background-size: 186%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		#todo {
+			background-image: url("/images/todosKO.png"); 
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		#space-duel {
+			background-image: url("/images/space-duel.png"); 
+			background-size: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
 }

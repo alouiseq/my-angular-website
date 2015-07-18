@@ -26,6 +26,28 @@ hr {
 
 .custom-navbar {
     margin-bottom: 40px;
+    height: 430px;
+    background-color: #3c3c3c;
+    background:  linear-gradient(
+                    rgba(61, 60, 60, 0.7), 
+                    rgba(61, 60, 60, 0.7)
+                ),
+                url("/images/ironman-tech2.png"),
+                url("/images/ironman-tech1.png");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 100%, 892px, 892px;
+    background-position: center, 63px, 982px 2px;
+
+    // background:  linear-gradient(
+    //                 rgba(61, 60, 60, 0.7), 
+    //                 rgba(61, 60, 60, 0.7)
+    //             ),
+    //             url("/images/ironman-tech2.png");
+    // background-color: #000;
+    // background-repeat: no-repeat;
+    // background-size: 100%, 757px;
+    // background-position: center, 200px;
 }
 
 .footer {
@@ -70,10 +92,9 @@ hr {
     color: #fff;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
     .container {
-        max-width: 730px;
+        max-width: 1080px !important;
     }
 
     /* Remove the padding we set earlier */
@@ -86,12 +107,6 @@ hr {
     .header {
         margin-bottom: 30px;
     }
-}
-
-.custom-navbar {
-    height: 430px;
-    background-color: #3c3c3c;
-    border-color: #e7e7e7;
 }
 
 .active {
