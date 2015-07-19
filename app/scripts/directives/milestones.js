@@ -15,13 +15,29 @@
  			templateUrl: '../views/milestones.html',
  			scope: {},
  			link: function (scope) {
+
+                /*** Defaults ***/
+
+                scope.expand = false;
+
  				scope.milestones = [
- 					{ year: 1983, event: 'I was born' },
- 					{ year: 2012, event: 'MS/BS Computer Engineering; Married high school sweetheart' },
- 					{ year: 2013, event: 'Alyssa was born' },
- 					{ year: 2014, event: 'First software developer role at GE' },
- 					{ year: 2015, event: 'Currently a Site Reliability Engineer @ Shutterfly' }
+ 					{ year: 1983, expand: false, event: 'I was born' },
+ 					{ year: 2012, expand: false, event: 'MS/BS Computer Engineering; Married high school sweetheart' },
+ 					{ year: 2013, expand: false, event: 'Alyssa was born' },
+ 					{ year: 2014, expand: false, event: 'First software developer role at GE' },
+ 					{ year: 2015, expand: false, event: 'Currently a Site Reliability Engineer @ Shutterfly' }
  				];
+
+
+                /*** Methods ***/
+
+                scope.expandEvent = function (milestone, set) {
+                    if (set == 'true') {
+                        milestone.expand = true;
+                    } else {
+                        milestone.expand = false;
+                    }
+                };
  			}
  		};
  	});

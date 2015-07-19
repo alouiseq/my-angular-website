@@ -1,66 +1,72 @@
 #milestones {
     position: relative;
     margin-bottom: 80px;
-}
 
-#milestones .milestones-title {
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-#milestones .timeline {
-    margin: 50px 0;
-}
-
-@mixin bubble {
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 40px;
-    padding: 20px;
-    background-color: #61e8ec;
-}
-
-#milestones .event {
-    @include bubble;
-    position: relative;
-    left: 1%;
-}
-
-#milestones .custom-tip {
-    @include bubble;
-    position: absolute;
-    height: 200px;
-    width: 200px;
-    border-radius: 111px;
-    text-align: center;
-
-    div {
-        margin-top: 30%;
+    .milestones-title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
     }
-}
 
-#milestones .custom-tip > span {
-    vertical-align: middle;
-}
+    .timeline {
+        margin: 50px 0;
+    }
 
-#milestones #index-0 {
-    left: 1%;
-}
+    @mixin bubble {
+        display: inline-block;
+        border: 1px solid black;
+        border-radius: 40px;
+        padding: 20px;
+        background-color: #61e8ec;        
+        font-size: 20px;
+        position: absolute;
+    }
 
-#milestones .event {
-    left: 850%;
-    font-size: 20px;
-}
+    .event-time {
+        @include bubble; 
+        top: 50%;
+    }
 
-#milestones hr.line {
-    position: absolute;
-    width: 100%;
-    top: 28%;
-    border-color: black;
-    z-index: -1;
-}
+    #index-0 {
+        left: 2%;
+    }
+    #index-1 {
+        left: 68.1%;
+    }
+    #index-2 {
+        left: 75.4%;
+    }
+    #index-3 {
+        left: 82.7%;
+    }
+    #index-4 {
+        left: 90%;
+    }
 
-.event-time {
-    display: inline-block;
+    .blow-up {
+        @include bubble;        
+        max-height: 200px;
+        width: 200px;
+        border-radius: 111px;
+        text-align: center;
+        left: 56%;
+        top: 65%;
+        z-index: 999;
+
+        div {
+            margin-top: 5%;
+        }
+
+        span {
+            vertical-align: middle;
+        }
+    }
+
+    hr.line {
+        position: absolute;
+        width: 100%;
+        top: 28%;
+        border-color: black;
+        z-index: -1;
+    }
 }

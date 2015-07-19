@@ -2,12 +2,12 @@
     <p class="milestones-title">Milestones</p>
     <div class="timeline">
         <hr class="line" />
-        <div class="event-time" ng-repeat="milestone in milestones">
-        	<span id="index-{{$index}}" class="event">{{milestone.year}}</span>
-        	<div class="custom-tip">
-        		<div>{{milestone.event}}</div>
-        	</div>
-        </div>
+        <div id="index-{{$index}}" ng-class="{'event-time': !milestone.expand, 'blow-up': milestone.expand}" ng-repeat="milestone in milestones" ng-mouseover="expandEvent(milestone, 'true')" ng-mouseleave="expandEvent(milestone, 'false')">
+        	<span class="event">{{milestone.year}}</span>  
+            <div ng-show="milestone.expand">
+                {{milestone.event}}
+            </div>      	
+        </div>        
     </div>
     <hr />
 </div>
