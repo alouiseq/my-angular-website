@@ -49,24 +49,51 @@
 		vertical-align: middle;
 	}
 
+	@mixin imageDefault {
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 999;
+	}
+
 	.projects-list {
 		#site {
 			background-image: url("/images/site-image.jpg"); 
 			background-size: 186%;
-			background-position: center;
-			background-repeat: no-repeat;
+			@include imageDefault;			
+		}		
+		#site:hover {
+			background-image: none;
+			background-color: bisque;
+		}
+		.meta-site {
+			margin: 40px 10px 10px 10px;
+
 		}
 		#todo {
 			background-image: url("/images/todosKO.png"); 
 			background-size: 100%;
-			background-position: center;
-			background-repeat: no-repeat;
+			@include imageDefault;			
+		}
+		#todo:hover {
+			background-image: none;
+			background-color: burlywood;
+		}
+		.meta-todo {
+			margin: 40px 10px 10px 10px;
+
 		}
 		#space-duel {
 			background-image: url("/images/space-duel.png"); 
 			background-size: 100%;
-			background-position: center;
-			background-repeat: no-repeat;
+			@include imageDefault;
+		}
+		#space-duel:hover {
+			background-image: none;
+			background-color: lightsalmon;
+		}
+		.meta-space-duel {
+			margin: 40px 10px 10px 10px;
+
 		}
 	}
 }

@@ -25,6 +25,7 @@
     .event-time {
         @include bubble; 
         top: 50%;
+        box-shadow: 5px 5px 10px #000;
     }
 
     #index-0 {
@@ -52,6 +53,7 @@
         left: 56%;
         top: 65%;
         z-index: 999;
+        box-shadow: -15px -15px 5px rgba(0, 0, 0, 0.56);
 
         div {
             margin-top: 5%;
@@ -68,5 +70,5 @@
         top: 28%;
         border-color: black;
         z-index: -1;
-    }
+    }    
 }

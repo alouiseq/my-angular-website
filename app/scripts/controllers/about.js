@@ -9,9 +9,10 @@
  */
 angular.module('mywebsiteApp')
   .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    
+        /*** Defaults ***/
+
+        // Activate selected page header 
+        $('.nav').find('a').removeClass('active');
+        $('.about').children('a').addClass('active');     
   });

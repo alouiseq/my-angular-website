@@ -22,23 +22,23 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: 'partials/home.html',
         controller: 'HomeCtrl'
       })
       .when('/projects', {
-        templateUrl: 'views/projects.html',
+        templateUrl: 'partials/projects.html',
         controller: 'ProjectsCtrl'
       })
       .when('/resume', {
-        templateUrl: 'views/resume.html',
+        templateUrl: 'partials/resume.html',
         controller: 'ResumeCtrl'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: 'partials/about.html',
         controller: 'AboutCtrl'
       })
       .when('/contact', {
-        templateUrl: 'views/contact.html',
+        templateUrl: 'partials/contact.html',
         controller: 'ContactCtrl'
       })
       .otherwise({

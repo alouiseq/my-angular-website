@@ -8,14 +8,23 @@
     <hr />
     <div class="projects-list">
         <p class="projects-title title">Latest Projects</p>
-        <div id="site" class="project desc">
+        <div id="site" class="project desc" ng-hover="projects.one = true">
             Portfolio Website
+            <p class="meta-site" ng-show="projects.one == true">
+                Changed technology stack to AngularJS and revamped UI. Will add canvas and D3 components.
+            </p>
         </div>
         <div id="todo" class="project desc">
             To Do App
+            <p class="meta-todo" ng-show="projects.two">
+                Add, read, update, and delete daily tasks with leveling capability. UI powered by Knockout.js and backend with node.js and MongoDB.
+            </p>
         </div>
         <div id="space-duel" class="project desc">
             Python Game: Space Duel
+            <p class="meta-space-duel"  ng-show="projects.three">
+                2d battle game with 1-2 player mode. Lose when health is 0 or you fall off the planet. Powered by Python and Pygame.
+            </p>
         </div>
         <div class="projects-button">
             <button class="btn desc">VIEW MORE PROJECTS</button>
