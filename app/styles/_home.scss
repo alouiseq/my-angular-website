@@ -55,45 +55,46 @@
 		z-index: 999;
 	}
 
+	@mixin marginDefault {
+		margin: 40px 10px 10px 10px;
+	}
+
 	.projects-list {
 		#site {
 			background-image: url("/images/site-image.jpg"); 
 			background-size: 186%;
-			@include imageDefault;			
+			@include imageDefault;
+			.meta {	
+				@include marginDefault;		
+			}			
 		}		
 		#site:hover {
 			background-image: none;
 			background-color: bisque;
-		}
-		.meta-site {
-			margin: 40px 10px 10px 10px;
-
-		}
+		}		
 		#todo {
 			background-image: url("/images/todosKO.png"); 
 			background-size: 100%;
-			@include imageDefault;			
+			@include imageDefault;
+			.meta {	
+				@include marginDefault;		
+			}				
 		}
 		#todo:hover {
 			background-image: none;
 			background-color: burlywood;
 		}
-		.meta-todo {
-			margin: 40px 10px 10px 10px;
-
-		}
 		#space-duel {
 			background-image: url("/images/space-duel.png"); 
 			background-size: 100%;
 			@include imageDefault;
+			.meta {	
+				@include marginDefault;		
+			}	
 		}
 		#space-duel:hover {
 			background-image: none;
 			background-color: lightsalmon;
-		}
-		.meta-space-duel {
-			margin: 40px 10px 10px 10px;
-
 		}
 	}
 }

@@ -8,26 +8,26 @@
     <hr />
     <div class="projects-list">
         <p class="projects-title title">Latest Projects</p>
-        <div id="site" class="project desc" ng-hover="projects.one = true">
+        <div id="site" class="project desc" ng-mouseover="showInfo('one', true)" ng-mouseleave="showInfo('one', false)">
             Portfolio Website
-            <p class="meta-site" ng-show="projects.one == true">
+            <p class="meta" ng-show="projects.one">
                 Changed technology stack to AngularJS and revamped UI. Will add canvas and D3 components.
             </p>
         </div>
-        <div id="todo" class="project desc">
+        <div id="todo" class="project desc" ng-mouseover="showInfo('two', true)" ng-mouseleave="showInfo('two', false)">
             To Do App
-            <p class="meta-todo" ng-show="projects.two">
+            <p class="meta" ng-show="projects.two">
                 Add, read, update, and delete daily tasks with leveling capability. UI powered by Knockout.js and backend with node.js and MongoDB.
             </p>
         </div>
-        <div id="space-duel" class="project desc">
+        <div id="space-duel" class="project desc" ng-mouseover="showInfo('three', true)" ng-mouseleave="showInfo('three', false)">
             Python Game: Space Duel
-            <p class="meta-space-duel"  ng-show="projects.three">
+            <p class="meta"  ng-show="projects.three">
                 2d battle game with 1-2 player mode. Lose when health is 0 or you fall off the planet. Powered by Python and Pygame.
             </p>
         </div>
         <div class="projects-button">
-            <button class="btn desc">VIEW MORE PROJECTS</button>
+            <button class="btn desc" ui-sref="projects">VIEW MORE PROJECTS</button>
         </div>
     </div>
     <hr />
@@ -35,7 +35,7 @@
     <div class="more-info">
         <div class="desc">
             <span>Need some help with your website?</span>
-            <span><a href="">HIRE ME TODAY</a></span>
+            <span><a ui-sref="contact">HIRE ME TODAY</a></span>
         </div>
     </div>
 </div>

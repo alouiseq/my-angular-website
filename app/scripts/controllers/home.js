@@ -15,10 +15,17 @@ angular.module('mywebsiteApp')
         $scope.title = 'Front-end Developer';
         $scope.info = '@ SHUTTERFLY';
         $scope.projects = {
-            one = false;
-            two = false;
-            three = false;
-        }
+            one: false,
+            two: false,
+            three: false
+        };
+
+
+        /*** Methods ***/
+        $scope.showInfo = function (index, showProj) {
+            $scope.projects[index] = showProj;
+        };
+
 
         /*** Initialize ***/
 

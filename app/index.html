@@ -39,11 +39,11 @@
 
                     <div class="collapse navbar-collapse nav-headers" id="js-navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="home"><a class="nav-header" href="#/">HOME</a></li>
-                            <li class="projects"><a class="nav-header" ng-href="#/projects">PROJECTS</a></li>
-                            <li class="resume"><a class="nav-header" ng-href="#/resume">RESUME</a></li>
-                            <li class="about"><a class="nav-header" ng-href="#/about">ABOUT</a></li>
-                            <li class="contact"><a class="nav-header" ng-href="#/contact">CONTACT</a></li>
+                            <li class="home"><a class="nav-header" ui-sref="home">HOME</a></li>
+                            <li class="projects"><a class="nav-header" ui-sref="projects">PROJECTS</a></li>
+                            <li class="resume"><a class="nav-header" ui-sref="resume">RESUME</a></li>
+                            <li class="about"><a class="nav-header" ui-sref="about">ABOUT</a></li>
+                            <li class="contact"><a class="nav-header" ui-sref="contact">CONTACT</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
         </div>
 
         <div class="container">
-        <div ng-view=""></div>
+        <div ui-view></div>
         </div>
 
         <div class="footer">
@@ -61,11 +61,11 @@
                 <p class="me">Alouise <span class="footer-brand">AQ</span> Quiatchon</p>
                 <div class="foot-wrapper">
                     <ul class="nav navbar-nav navbar-footer">
-                        <li><a class="nav-header active" href="#/">HOME</a></li>
-                        <li><a class="nav-header" ng-href="#/projects">PROJECTS</a></li>
-                        <li><a class="nav-header" ng-href="#/resume">RESUME</a></li>
-                        <li><a class="nav-header" ng-href="#/about">ABOUT</a></li>
-                        <li><a class="nav-header" ng-href="#/contact">CONTACT</a></li>
+                        <li><a class="nav-header active" ui-sref="home">HOME</a></li>
+                        <li><a class="nav-header" ui-sref="projects">PROJECTS</a></li>
+                        <li><a class="nav-header" ui-sref="resume">RESUME</a></li>
+                        <li><a class="nav-header" ui-sref="about">ABOUT</a></li>
+                        <li><a class="nav-header" ui-sref="contact">CONTACT</a></li>
                     </ul>
                 </div>
                 <p class="copyright">&#169; 2015 Alouise Quiatchon. All rights reserved.</p>
@@ -90,6 +90,7 @@
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 

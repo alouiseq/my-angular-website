@@ -12,7 +12,7 @@
  	.directive('milestonesTimeline', function () {
  		return {
  			restrict: 'E',
- 			templateUrl: '../views/milestones.html',
+ 			templateUrl: '../partials/milestones.html',
  			scope: {},
  			link: function (scope) {
 
