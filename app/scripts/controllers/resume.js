@@ -10,7 +10,19 @@
 angular.module('mywebsiteApp')
     .controller('ResumeCtrl', function ($scope) {
         
+        /*** Defaults ***/
+
+        $scope.title = 'Skills & Technologies';
+        $scope.info = '';
+
+
+        /*** Initialize ***/
+
         // Activate selected page header
         $('.nav').find('a').removeClass('active');
-        $('.resume').children('a').addClass('active');                           
+        $('.resume').children('a').addClass('active');      
+
+        // Add specific data to nav area
+        $('#nav-title1').find('em').text($scope.title);
+        $('#nav-title2').find('h2').text($scope.info);                     
     });

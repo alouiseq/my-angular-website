@@ -13,7 +13,7 @@ angular.module('mywebsiteApp')
         /*** Defaults ***/
 
         $scope.title = 'Front-end Developer';
-        $scope.info = '@ SHUTTERFLY';
+        $scope.info = '@ Shutterfly';
         $scope.projects = {
             one: false,
             two: false,
@@ -32,4 +32,8 @@ angular.module('mywebsiteApp')
         // Activate selected page header
         $('.nav').find('a').removeClass('active');
         $('.home').children('a').addClass('active');    
+
+        // Add specific data to nav area
+        $('#nav-title1').find('em').text($scope.title);
+        $('#nav-title2').find('h2').text($scope.info);
     });

@@ -12,7 +12,16 @@ angular.module('mywebsiteApp')
 
         /*** Defaults ***/
 
+        $scope.title = 'Projects';
+        $scope.info = '';
+
+        /*** Initialize ***/
+
         // Activate selected page header 
         $('.nav').find('a').removeClass('active');
-        $('.projects').children('a').addClass('active');                         
+        $('.projects').children('a').addClass('active');     
+
+        // Add specific data to nav area
+        $('#nav-title1').find('em').text($scope.title);
+        $('#nav-title2').find('h2').text($scope.info);                    
     });

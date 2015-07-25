@@ -44,4 +44,25 @@
 	.education {
 		margin-bottom: 20px;
 	}
+
+	.more-info {
+		text-align: center;
+	}
+
+	.more-info > div:hover {
+		background-color: darkgray;
+	}
+
+	.more-info > div {
+		display: inline-block;
+		border: 1px solid black;
+		padding: 5px 10px;
+		margin: 25px 0 10px 0;
+		background-color: lightgray;
+	}
+
+	.resume-button {
+		color: #2A5B86;
+	}
+
 }
