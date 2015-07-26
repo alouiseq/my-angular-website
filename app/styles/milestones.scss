@@ -45,6 +45,7 @@
     }
 
     .blow-up {
+        transition: left 1s ease-in;
         @include bubble;        
         max-height: 200px;
         width: 200px;

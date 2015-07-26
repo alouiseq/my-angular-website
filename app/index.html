@@ -37,14 +37,16 @@
                         <span class="navbar-brand" href="#/">AQ</span>
                     </div>
 
-                    <div class="collapse navbar-collapse nav-headers" id="js-navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="home"><a class="nav-header" ui-sref="home">HOME</a></li>
-                            <li class="projects"><a class="nav-header" ui-sref="projects">PROJECTS</a></li>
-                            <li class="resume"><a class="nav-header" ui-sref="resume">RESUME</a></li>
-                            <li class="about"><a class="nav-header" ui-sref="about">ABOUT</a></li>
-                            <li class="contact"><a class="nav-header" ui-sref="contact">CONTACT</a></li>
-                        </ul>
+                    <div class="header-wrapper">
+                        <div class="collapse navbar-collapse nav-headers" id="js-navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="home"><a class="nav-header" ui-sref="home">HOME</a></li>
+                                <li class="projects"><a class="nav-header" ui-sref="projects">PROJECTS</a></li>
+                                <li class="resume"><a class="nav-header" ui-sref="resume">RESUME</a></li>
+                                <li class="about"><a class="nav-header" ui-sref="about">ABOUT</a></li>
+                                <li class="contact"><a class="nav-header" ui-sref="contact">CONTACT</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div id="nav-title1" class="nav-title"><h1><em></em></h1></div>
@@ -103,5 +105,24 @@
             <script src="scripts/controllers/contact.js"></script>
             <script src="scripts/directives/milestones.js"></script>
         <!-- endbuild -->
+
+        <!-- Sticky headers -->
+        <script>
+            $(window).on('scroll', function () {
+                if ($(this).scrollTop() > 155) {
+                    $('#nav-title1').addClass('sticky-title');
+                } else {
+                    $('#nav-title1').removeClass('sticky-title');
+                }
+                if ($(this).scrollTop() > 366) {
+                    $('.header-wrapper').addClass('sticky-navbar');
+                } else {
+                    $('.header-wrapper').removeClass('sticky-navbar');
+
+                }
+                console.log($(this).scrollTop());
+            });
+        </script>
+
 </body>
 </html>

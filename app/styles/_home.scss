@@ -65,6 +65,7 @@
 			}			
 		}		
 		#site:hover {
+			transition: all 1s ease-in;
 			background-image: none;
 			background-color: bisque;
 		}		
@@ -77,6 +78,7 @@
 			}				
 		}
 		#todo:hover {
+			transition: all 1s ease-in;
 			background-image: none;
 			background-color: burlywood;
 		}
@@ -89,6 +91,7 @@
 			}	
 		}
 		#space-duel:hover {
+			transition: all 1s ease-in;
 			background-image: none;
 			background-color: lightsalmon;
 		}
