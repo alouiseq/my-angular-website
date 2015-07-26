@@ -21,34 +21,55 @@ body {
     font-size: 20px;
 }
 
+#nav-title1 em {
+    font-size: 50px;
+}
+
 hr {
     margin: 60px 0;
 }
 
-.custom-navbar {
+@mixin custom-navbar($image) {
     margin-bottom: 40px;
     height: 430px;
-    background-color: #3c3c3c;
-    background:  linear-gradient(
-                    rgba(61, 60, 60, 0.7), 
-                    rgba(61, 60, 60, 0.7)
-                ),
-                url("/images/ironman-tech2.png"),
-                url("/images/ironman-tech1.png");
+    background-image:  
+        linear-gradient(
+            rgba(61, 60, 60, 0.7), 
+            rgba(61, 60, 60, 0.7)
+        ),
+        url($image);
     background-color: #000;
     background-repeat: no-repeat;
-    background-size: 100%, 892px, 892px;
-    background-position: center, 63px, 982px 2px;
+}
 
-    // background:  linear-gradient(
-    //                 rgba(61, 60, 60, 0.7), 
-    //                 rgba(61, 60, 60, 0.7)
-    //             ),
-    //             url("/images/ironman-tech2.png");
-    // background-color: #000;
-    // background-repeat: no-repeat;
-    // background-size: 100%, 757px;
-    // background-position: center, 200px;
+.home-background {
+    @include custom-navbar("/images/ironman-tech2.png");
+    background-size: 100%, 75%;
+    background-position: center, center 20%;
+}
+
+.projects-background {
+    @include custom-navbar("/images/marvel-heroes.jpg");
+    background-size: 100%;
+    background-position: 0 15%;
+}
+
+.resume-background {
+    @include custom-navbar("/images/avengers2.jpg");
+    background-size: 100%;
+    background-position: 0% 0%;
+}
+
+.about-background {
+    @include custom-navbar("/images/avengers2.jpg");
+    background-size: 100%;
+    background-position: 0% 61%;
+}
+
+.contact-background {
+    @include custom-navbar("/images/iron-man-black.jpg");
+    background-size: 100%;
+    background-position: 0 18%;
 }
 
 .footer {
@@ -116,7 +137,7 @@ hr {
 
 .nav-header {
     color: #fff;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .nav-headers {
@@ -159,7 +180,7 @@ hr {
 }
 
 #nav-title2 {
-    top: 193px;
+    top: 210px;
 }
 
 .nav-title > h1,

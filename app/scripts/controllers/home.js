@@ -36,4 +36,8 @@ angular.module('mywebsiteApp')
         // Add specific data to nav area
         $('#nav-title1').find('em').text($scope.title);
         $('#nav-title2').find('h2').text($scope.info);
+        $('.navbar').removeClass(function () {
+            return $(this).attr('class');
+        });
+        $('#navbar').addClass('navbar custom-navbar home-background');
     });
