@@ -8,7 +8,7 @@
  * Controller of the mywebsiteApp
  */
 angular.module('mywebsiteApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('AboutCtrl', function ($scope, $timeout) {
     
         /*** Defaults ***/
 
@@ -25,6 +25,12 @@ angular.module('mywebsiteApp')
         // Add specific data to nav area
         $('#nav-title1').find('em').text($scope.title);
         $('#nav-title2').find('h2').text($scope.info);
+        $('#titles').removeClass('titles-animate');
+        $timeout(function () {
+            $('#titles').addClass('titles-animate');
+        });
+
+        // Custom nav header background
         $('.navbar').removeClass(function () {
             return $(this).attr('class');
         });
