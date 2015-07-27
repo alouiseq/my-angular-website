@@ -45,16 +45,18 @@
     }
 
     .blow-up {
-        transition: left 1s ease-in;
-        @include bubble;        
-        max-height: 200px;
-        width: 200px;
+        transition: transform 1s ease-in,
+            box-shadow 1s ease-out;
+        @include bubble;
+        transform: scale(1.5,1.5);        
+        // max-height: 200px;
+        // width: 200px;
         border-radius: 111px;
         text-align: center;
-        left: 56%;
-        top: 65%;
+        // left: 56%;
+        // top: 65%;
         z-index: 999;
-        box-shadow: -15px -15px 5px rgba(0, 0, 0, 0.56);
+        box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.56);
 
         div {
             margin-top: 5%;
