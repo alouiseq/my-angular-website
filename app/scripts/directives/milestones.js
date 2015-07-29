@@ -32,7 +32,7 @@
                 /*** Methods ***/
 
                 scope.expandEvent = function (milestone, set) {
-                    if (set == 'true') {
+                    if (set === 'true') {
                         milestone.expand = true;
                     } else {
                         milestone.expand = false;
