@@ -46,4 +46,7 @@ angular.module('mywebsiteApp')
             return $(this).attr('class');
         });
         $('#navbar').addClass('navbar custom-navbar home-background');
+
+        // Canvas - header background
+        var image = $('.home-b').
     });

@@ -41,10 +41,17 @@ hr {
     background-repeat: no-repeat;
 }
 
-.home-background {
-    @include custom-navbar("/images/ironman-tech2.png");
-    background-size: 100%, 75%;
-    background-position: center, center 20%;
+.custom-navbar {
+    text-align: center;
+    background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7));
+    background-color: #000;
+    background-size: 100%;
+}
+
+.home-b {
+    width: 75%;
+    height: 430px;
+    display: none;
 }
 
 .projects-background {
