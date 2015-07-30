@@ -46,4 +46,18 @@ angular.module('mywebsiteApp')
             return $(this).attr('class');
         });
         $('#navbar').addClass('navbar custom-navbar home-background');
+
+        // Animate header background with canvas
+        var canv = document.getElementById('canv');
+        var ctx = canv.getContext('2d');
+        var imgData = ctx.createImageData(10, 10);
+        var pixelData = imgData.data;
+        for (var i=0; i<pixelData.length; i+=4) {
+            pixelData[i] = 255;
+            pixelData[i+1] = 0;
+            pixelData[i+2] = 0;
+            pixelData[i+3] = 255;
+        }
+        ctx.putImageData(imgData, 100, 40);
+
     });
