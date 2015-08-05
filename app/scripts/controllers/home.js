@@ -45,19 +45,39 @@ angular.module('mywebsiteApp')
         $('.navbar').removeClass(function () {
             return $(this).attr('class');
         });
-        $('#navbar').addClass('navbar custom-navbar home-background');
+        // $('#navbar').addClass('navbar custom-navbar home-background');
 
         // Animate header background with canvas
         var canv = document.getElementById('canv');
         var ctx = canv.getContext('2d');
-        var imgData = ctx.createImageData(10, 10);
-        var pixelData = imgData.data;
-        for (var i=0; i<pixelData.length; i+=4) {
-            pixelData[i] = 255;
-            pixelData[i+1] = 0;
-            pixelData[i+2] = 0;
-            pixelData[i+3] = 255;
-        }
-        ctx.putImageData(imgData, 100, 40);
+        var newImage = new Image();
+        newImage.src = '/images/ironman-tech2.png';
+        newImage.onload = function () {
+            canv.width = newImage.width;    // 1920 for mbp
+            canv.height = '575';
+            ctx.drawImage(newImage, 0, 0);
+            var imageData = ctx.getImageData(0, 0, canv.width, canv.height);
+            var pixelData = imageData.data;
+            var totalPixels = canv.height * canv.width * 4;
+            var startY = canv.height / 2;
+            var startX = (canv.width / 2) * 4;
+            var startIndex = (startY * canv.width + startX) * 4;
+            var index = startIndex;
+            var partial = 1924000 + 100 * 4;
+            var prevIndex = 0;
+    
+            for (var y=startY; y < canv.height; y++) {      // rows
+                for (var x=startX; x < startX+1; x++) {   // columns
+                    // index = (y * canv.width + x) * 4;                          
+                    pixelData[index++] = 183;
+                    pixelData[index++] = 191;
+                    pixelData[index++] = 203;
+                    pixelData[index++] = 255;
+                    prevIndex = index;
+                }
+            }
+            // ctx.clearRect(0, 0, canv.width, canv.height);
+            ctx.putImageData(imageData, 0, 0);
+        };
 
     });
