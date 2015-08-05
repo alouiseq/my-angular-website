@@ -55,28 +55,30 @@ angular.module('mywebsiteApp')
             var newImage = new Image();
             newImage.src = '/images/ironman-tech2.png';
 
+            // process image on load
             newImage.onload = function () {
                 canv.width = newImage.width;    // 1920 for mbp
                 canv.height = '575';
+                var width = canv.width;
+                var height = canv.height;
+
                 ctx.drawImage(newImage, 0, 0);
-                var imageData = ctx.getImageData(0, 0, canv.width, canv.height);
+
+                var imageData = ctx.getImageData(0, 0, width, height);
                 var pixelData = imageData.data;
-                var totalPixels = canv.height * canv.width * 4;
-                var startY = canv.height / 2;
-                var startX = (canv.width / 2) * 4;
-                var startIndex = (startY * canv.width + startX) * 4;
+                var totalPixels = height * width * 4;
+                var startY = height / 2;
+                var startX = width / 2;
+                var startIndex = startY * width + startX * 4;
                 var index = startIndex;
-                var partial = 1924000 + 100 * 4;
-                var prevIndex = 0;
         
-                for (var y=startY; y < canv.height; y++) {      // rows
-                    for (var x=startX; x < startX+1; x++) {   // columns
+                for (var y=startY; y<height; y++) {      // rows
+                    for (var x=startX; x<width; x++) {   // columns
                         // index = (y * canv.width + x) * 4;                          
                         pixelData[index++] = 183;
                         pixelData[index++] = 191;
                         pixelData[index++] = 203;
                         pixelData[index++] = 255;
-                        prevIndex = index;
                     }
                 }
                 // ctx.clearRect(0, 0, canv.width, canv.height);
