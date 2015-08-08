@@ -73,33 +73,42 @@ angular.module('mywebsiteApp')
                 var a = 255;
                 var count = 0;
                 var index;
+                var negIndex;
                 var offset = 0;
                 var count = 0;
                 var thickX =10;
                 var startY = Math.floor(131);
                 var startX = Math.floor(1532);
                 var currX = startX;
+                var negX;
                 var xLimit = 1615;
+                // var endX = xLimit;
                 var yLimit = 155;       
+
+                var changePixels = function (index) {
+                    pixelData[index++] = r;
+                    pixelData[index++] = g;
+                    pixelData[index++] = b;
+                    pixelData[index++] = a;
+                };
         
                 for (var y=startY; y<yLimit; y++) {      // rows
                     index = (y * width + currX + offset) * 4;
 
                     // for (var x=currX;;) {   // columns                        
-                    for (var x=currX; count<thickX; x++) {   // columns                        
-                        pixelData[index++] = r;
-                        pixelData[index++] = g;
-                        pixelData[index++] = b;
-                        pixelData[index++] = a;
+                    for (var x=currX,z=xLimit; count<thickX; x++,z--) {   // columns                        
+                        changePixels(index);
                         index = (y * width + x + offset) * 4;
                         count++;
                         // if (x === currX) {
-                        //     x = --xLimit;
-                        //     // index = (y * width + x - offset) * 4;                                                                                 
+                            // x = --xLimit;
+                            negIndex = (y * width + z - offset) * 4;   
+                            changePixels(negIndex);    
                         // } else {
-                        //     break;
+                            // break;
                         // }                        
-                    }
+                    }                    
+                    // offset <= 12 ? offset++ : offset;
                     offset++;
                     currX++;
                     count = 0;                    
