@@ -67,20 +67,44 @@ angular.module('mywebsiteApp')
                 var imageData = ctx.getImageData(0, 0, width, height);
                 var pixelData = imageData.data;
                 var totalPixels = height * width * 4;
-                var startY = height / 2;
-                var startX = width / 2;
-                var startIndex = startY * width + startX * 4;
-                var index = startIndex;
+                var r = 255;
+                var g = 0;
+                var b = 0;
+                var a = 255;
+                var count = 0;
+                var index;
+                var offset = 0;
+                var count = 0;
+                var thickX =10;
+                var startY = Math.floor(131);
+                var startX = Math.floor(1532);
+                var currX = startX;
+                var xLimit = 1615;
+                var yLimit = 155;       
         
-                for (var y=startY; y<height; y++) {      // rows
-                    for (var x=startX; x<width; x++) {   // columns
-                        // index = (y * canv.width + x) * 4;                          
-                        pixelData[index++] = 183;
-                        pixelData[index++] = 191;
-                        pixelData[index++] = 203;
-                        pixelData[index++] = 255;
+                for (var y=startY; y<yLimit; y++) {      // rows
+                    index = (y * width + currX + offset) * 4;
+
+                    // for (var x=currX;;) {   // columns                        
+                    for (var x=currX; count<thickX; x++) {   // columns                        
+                        pixelData[index++] = r;
+                        pixelData[index++] = g;
+                        pixelData[index++] = b;
+                        pixelData[index++] = a;
+                        index = (y * width + x + offset) * 4;
+                        count++;
+                        // if (x === currX) {
+                        //     x = --xLimit;
+                        //     // index = (y * width + x - offset) * 4;                                                                                 
+                        // } else {
+                        //     break;
+                        // }                        
                     }
+                    offset++;
+                    currX++;
+                    count = 0;                    
                 }
+                offset = 0;
                 // ctx.clearRect(0, 0, canv.width, canv.height);
                 ctx.putImageData(imageData, 0, 0);
             };
