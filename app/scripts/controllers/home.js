@@ -20,6 +20,35 @@ angular.module('mywebsiteApp')
             three: false
         };
 
+        // Canvas items        
+        var topBoxSeam = {
+            startX: 1532,
+            startY: 130,
+            midX: 1569,
+            midY: 152,            
+            cpx1: 1577,
+            cpy1: 157,
+            cpx2: 1585,
+            cpy2: 152,
+            endX: 1613,
+            endY: 129, 
+            rad: 20
+        };  
+
+        var bottomBoxSeam = {
+            startX: 1532,
+            startY: 154,
+            midX: 1569,
+            midY: 182,            
+            cpx1: 1577,
+            cpy1: 187,
+            cpx2: 1585,
+            cpy2: 180,
+            endX: 1613,
+            endY: 153, 
+            rad: 19
+        };            
+          
 
         /*** Methods ***/
 
@@ -49,7 +78,7 @@ angular.module('mywebsiteApp')
             // $('#navbar').addClass('navbar custom-navbar home-background');
         };
 
-        var animateImage = function () {
+        var manipulatePixels = function () {
             var canv = document.getElementById('canv');
             var ctx = canv.getContext('2d');
             var newImage = new Image();
@@ -82,7 +111,6 @@ angular.module('mywebsiteApp')
                 var currX = startX;
                 var negX;
                 var xLimit = 1615;
-                // var endX = xLimit;
                 var yLimit = 155;       
 
                 var changePixels = function (index) {
@@ -95,37 +123,75 @@ angular.module('mywebsiteApp')
                 for (var y=startY; y<yLimit; y++) {      // rows
                     index = (y * width + currX + offset) * 4;
 
-                    // for (var x=currX;;) {   // columns                        
                     for (var x=currX,z=xLimit; count<thickX; x++,z--) {   // columns                        
                         changePixels(index);
                         index = (y * width + x + offset) * 4;
                         count++;
-                        // if (x === currX) {
-                            // x = --xLimit;
                             negIndex = (y * width + z - offset) * 4;   
-                            changePixels(negIndex);    
-                        // } else {
-                            // break;
-                        // }                        
+                            changePixels(negIndex);                        
                     }                    
-                    // offset <= 12 ? offset++ : offset;
                     offset++;
                     currX++;
                     count = 0;                    
                 }
                 offset = 0;
-                // ctx.clearRect(0, 0, canv.width, canv.height);
                 ctx.putImageData(imageData, 0, 0);
             };
         };
 
+        var setup = function () { 
+            var canv = document.getElementById('canv');
+            var ctx = canv.getContext('2d');              
+            var newImage = new Image();
+            newImage.src = '/images/ironman-tech2.png';
 
-        /*** Initialize ***/
+            // process image on load
+            newImage.onload = function () {
+                canv.width = newImage.width;
+                canv.height = '575';
+                var width = canv.width;
+                var height = canv.height;
+                ctx.drawImage(newImage, 0, 0);
+
+                // Animate box seams
+                animateBoxSeam(ctx, topBoxSeam);                
+                // animateBoxSeam(ctx, bottomBoxSeam);                
+            }
+        };
+
+        var toggle = true;
+        var animateBoxSeam = function (ctx, item) { 
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'rgb(0, 0, 255, 255)';
+            ctx.moveTo(item.startX, item.startY);
+            ctx.lineTo(item.midX, item.midY);     
+            ctx.arcTo(item.cpx1, item.cpy1, item.cpx2, item.cpy2, item.rad); 
+            ctx.lineTo(item.endX, item.endY);               
+            ctx.stroke();
+
+            // Set interval for color transform
+            window.setInterval(function () {
+                ctx.strokeStyle = toggle ? 'rgb(0, 0, 255, 0)' : 'rgb(0, 0, 255, 255)';
+                ctx.stroke();
+                toggle = !toggle;
+            }, 2000);
+        }
+
+        // var colorChange = function () {
+
+        // }
+
+
+        /*** INITIALIZE ***/
 
         // Add text and image to the top of the page
         customPageHeaders();
 
-        // Animate header background with canvas
-        animateImage();
+        // Modify pixels for header background
+        // manipulatePixels();         
+        
+        // Initial canvas setup
+        setup();        
 
     });
