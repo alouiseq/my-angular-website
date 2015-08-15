@@ -19,9 +19,15 @@ angular.module('mywebsiteApp')
             two: false,
             three: false
         };
+        var toggleBox = true;
+        var clearEyeCount = 2;
+        var clearRadialCount = 3;
 
         // Canvas items        
         var topBoxSeam = {
+            offsetXleft: 1.7,
+            offsetXmid: 1,
+            offsetXright: 1.4,
             startX: 1532,
             startY: 130,
             midX: 1570,
@@ -38,8 +44,11 @@ angular.module('mywebsiteApp')
         };  
 
         var bottomBoxSeam = {
-            startX: 1532,
-            startY: 160,
+            offsetXleft: 1.5,
+            offsetXmid: 1,
+            offsetXright: 1.2,
+            startX: 1535,
+            startY: 156,
             midX: 1570,
             midY: 182,
             curveX: 1581,
@@ -51,6 +60,84 @@ angular.module('mywebsiteApp')
             endX: 1615,
             endY: 157, 
             rad: 30
+        }; 
+
+        var leftEye = {
+            startX: 872,
+            startY: 254,
+            currX: 940,
+            currY: 265,
+            offsetsX: [
+                -5, 
+                -30, 
+                -20, 
+                -15, 
+                4
+            ],
+            offsetsY: [
+                11, 
+                5, 
+                -3, 
+                -9, 
+                -15
+            ]
+        };     
+
+        var rightEye = {
+            startX: 1064,
+            startY: 254,
+            currX: 996,
+            currY: 265,
+            offsetsX: [
+                5, 
+                30, 
+                20, 
+                15, 
+                -4
+            ],
+            offsetsY: [
+                11, 
+                5, 
+                -3, 
+                -9, 
+                -15
+            ]
+        }; 
+
+        var outerArc = {
+            startX: 505,
+            startY: 350,
+            rad: 145,
+            startAngle: 0,                
+            endAngle: 2 * Math.PI,
+            iterator: 0.01,
+            strokeColor: 'rgb(66,38,12)',
+            lineWidth: 4,
+            counterClockwise: false
+        }; 
+
+        var middleArc = {
+            startX: 505,
+            startY: 350,
+            rad: 65,
+            startAngle: 0,                
+            endAngle: 2 * Math.PI,
+            iterator: -0.01,
+            strokeColor: 'rgb(190,138,35)',
+            lineWidth: 4,
+            counterClockwise: true
+        };   
+
+        var innerArc = {
+            startX: 505,
+            startY: 350,
+            rad: 27,
+            startAngle: 0,                
+            endAngle: 2 * Math.PI,
+            iterator: 0.01,
+            strokeColor: 'rgb(117,117,117)',
+            lineWidth: 1,
+            counterClockwise: false
         };            
           
 
@@ -82,67 +169,6 @@ angular.module('mywebsiteApp')
             // $('#navbar').addClass('navbar custom-navbar home-background');
         };
 
-        // var manipulatePixels = function () {
-        //     var canv = document.getElementById('canv');
-        //     var ctx = canv.getContext('2d');
-        //     var newImage = new Image();
-        //     newImage.src = '/images/ironman-tech2.png';
-
-        //     // process image on load
-        //     newImage.onload = function () {
-        //         canv.width = newImage.width;    // 1920 for mbp
-        //         canv.height = '575';
-        //         var width = canv.width;
-        //         var height = canv.height;
-
-        //         ctx.drawImage(newImage, 0, 0);
-
-        //         var imageData = ctx.getImageData(0, 0, width, height);
-        //         var pixelData = imageData.data;
-        //         var totalPixels = height * width * 4;
-        //         var r = 255;
-        //         var g = 0;
-        //         var b = 0;
-        //         var a = 255;
-        //         var count = 0;
-        //         var index;
-        //         var negIndex;
-        //         var offset = 0;
-        //         var count = 0;
-        //         var thickX =10;
-        //         var startY = Math.floor(131);
-        //         var startX = Math.floor(1532);
-        //         var currX = startX;
-        //         var negX;
-        //         var xLimit = 1615;
-        //         var yLimit = 155;       
-
-        //         var changePixels = function (index) {
-        //             pixelData[index++] = r;
-        //             pixelData[index++] = g;
-        //             pixelData[index++] = b;
-        //             pixelData[index++] = a;
-        //         };
-        
-        //         for (var y=startY; y<yLimit; y++) {      // rows
-        //             index = (y * width + currX + offset) * 4;
-
-        //             for (var x=currX,z=xLimit; count<thickX; x++,z--) {   // columns                        
-        //                 changePixels(index);
-        //                 index = (y * width + x + offset) * 4;
-        //                 count++;
-        //                     negIndex = (y * width + z - offset) * 4;   
-        //                     changePixels(negIndex);                        
-        //             }                    
-        //             offset++;
-        //             currX++;
-        //             count = 0;                    
-        //         }
-        //         offset = 0;
-        //         ctx.putImageData(imageData, 0, 0);
-        //     };
-        // };
-
         var setup = function () { 
             $scope.canv = document.getElementById('canv');
             $scope.ctx = canv.getContext('2d');              
@@ -155,39 +181,107 @@ angular.module('mywebsiteApp')
                 $scope.canv.height = '575';
                 $scope.ctx.drawImage($scope.newImage, 0, 0);
 
-                // Animate box seams
-                // window.setInterval(function () {
-                    animateBoxSeam(topBoxSeam);                
-                    // animateBoxSeam(bottomBoxSeam);  
-                // }, 400);
+                // animateBoxSeam(topBoxSeam);
+                // animateEyes(leftEye);
+                // animateEyes(rightEye);
+                animateRadialComp(outerArc);
+                animateRadialComp(middleArc);
+                animateRadialComp(innerArc);
                              
             };
         };
+
+        var clear = function (animateItemFn, items) {
+            window.setTimeout(function () {
+                $scope.ctx.clearRect(0, 0, $scope.canv.width, $scope.canv.height);
+                $scope.ctx.drawImage($scope.newImage, 0, 0);
+                _.forEach(items, function (item) {
+                    animateItemFn(item);
+                })
+            }, 1000);
+        }
+
+        var animateRadialComp = function (item) {
+            var canv = $scope.canv;
+            var ctx = $scope.ctx;
+            var image = $scope.newImage; 
+            var iterator = item.iterator;
+            ctx.lineWidth = item.lineWidth;
+            ctx.strokeStyle = item.strokeColor;
+            
+            var drawArc = function () {
+                ctx.beginPath();
+                currAngle += iterator;
+                ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
+                ctx.stroke();
+                var animeId = window.requestAnimationFrame(drawArc);
+                if (currAngle >+ 2 * Math.PI && --clearRadialCount <= 0) {
+                    window.cancelAnimationFrame(animeId);
+                    clear(animateRadialComp, [item]);
+                    clearRadialCount = 3;
+                }
+            };
+
+            ctx.beginPath();
+            var currAngle = iterator;
+            ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
+            ctx.stroke();
+            window.requestAnimationFrame(drawArc);
+        };
+
+        var animateEyes = function (item) {
+            window.setTimeout(function () {
+                var canv = $scope.canv;
+                var ctx = $scope.ctx;
+                var image = $scope.newImage; 
+                var currX = item.currX;
+                var currY = item.currY;               
+                ctx.lineWidth = 4;
+                ctx.strokeStyle = '#15738b';
+                ctx.fillStyle = '#fefefe';
+                ctx.save();
+                ctx.beginPath();
+                
+                ctx.moveTo(item.startX, item.startY);
+                ctx.lineTo(currX, currY);
+                for (var i=0; i<item.offsetsX.length; i++) {
+                    currX = currX + item.offsetsX[i]; 
+                    currY = currY + item.offsetsY[i];
+                    ctx.lineTo(currX, currY);
+                }
+
+                ctx.fill();
+                ctx.stroke();
+                ctx.restore();
+
+                if (--clearEyeCount <= 0) {
+                    clear(animateEyes, [leftEye, rightEye]);
+                    clearEyeCount = 2;
+                }
+
+            }, 5000);            
+        }
 
         var animateBoxSeam = function (item) { 
             var canv = $scope.canv;
             var ctx = $scope.ctx;
             var image = $scope.newImage;
             ctx.lineWidth = 2;
-            ctx.strokeStyle = '#c1d2f4';
+            ctx.strokeStyle = '#9ec1fb';
             var currX = item.startX;
             var currY = item.startY;
             ctx.beginPath();
             ctx.moveTo(item.startX, item.startY);
             var animeId;
-            var offsetX = 1.7;
 
             var animateLeftLine = function () {
                 ctx.lineTo(currX, currY);
                 ctx.stroke();
-                currX += offsetX;
+                currX += item.offsetXleft;
                 currY++;
                 animeId = window.setTimeout(animateLeftLine, 100);
                 if (currX >= item.midX && currY >= item.midY) {
-                    // currX += 12;
-                    offsetX = 1;
                     window.clearTimeout(animeId);
-                    // animateArcTo();
                     animateMidLine();
                 }
             };
@@ -195,10 +289,9 @@ angular.module('mywebsiteApp')
             var animateMidLine = function () {
                 ctx.lineTo(currX, currY);
                 ctx.stroke();
-                currX += offsetX;
+                currX += item.offsetXmid;
                 animeId = window.setTimeout(animateMidLine, 100);
                 if (currX >= item.curveX && currY >= item.curveY) {
-                    offsetX = 1.4;
                     window.clearTimeout(animeId);
                     animateRightLine();
                 }
@@ -207,14 +300,19 @@ angular.module('mywebsiteApp')
             var animateRightLine = function () {
                 ctx.lineTo(currX, currY);
                 ctx.stroke();
-                currX += offsetX;
+                currX += item.offsetXright;
                 currY--;
                 animeId = window.setTimeout(animateRightLine, 100);
                 if (currX >= item.endX && currY <= item.endY) {
                     window.clearTimeout(animeId);
                     ctx.clearRect(0, 0, canv.width, canv.height);
                     ctx.drawImage(image, 0, 0);
-                    // animateBoxSeam(topBoxSeam);
+                    if (toggleBox) {
+                        animateBoxSeam(topBoxSeam);
+                    } else {
+                        animateBoxSeam(bottomBoxSeam);  
+                    }
+                    toggleBox = !toggleBox;
                 }
             };
 
