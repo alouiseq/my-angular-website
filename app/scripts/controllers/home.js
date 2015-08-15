@@ -21,7 +21,6 @@ angular.module('mywebsiteApp')
         };
         var toggleBox = true;
         var clearEyeCount = 2;
-        var clearRadialCount = 3;
 
         // Canvas items        
         var topBoxSeam = {
@@ -111,7 +110,7 @@ angular.module('mywebsiteApp')
             startAngle: 0,                
             endAngle: 2 * Math.PI,
             iterator: 0.01,
-            strokeColor: 'rgb(66,38,12)',
+            strokeColor: 'rgb(85,49,16)',
             lineWidth: 4,
             counterClockwise: false
         }; 
@@ -175,6 +174,11 @@ angular.module('mywebsiteApp')
             $scope.newImage = new Image();
             $scope.newImage.src = '/images/ironman-tech2.png';
 
+            // Object instances
+            $scope.outerRadial = new RadialComponent(outerArc);
+            $scope.middleRadial = new RadialComponent(middleArc);
+            $scope.innerRadial = new RadialComponent(innerArc);
+
             // process image on load
             $scope.newImage.onload = function () {
                 $scope.canv.width = $scope.newImage.width;
@@ -184,50 +188,62 @@ angular.module('mywebsiteApp')
                 // animateBoxSeam(topBoxSeam);
                 // animateEyes(leftEye);
                 // animateEyes(rightEye);
-                animateRadialComp(outerArc);
-                animateRadialComp(middleArc);
-                animateRadialComp(innerArc);
+                // animateRadialComp(outerArc);
+                // animateRadialComp(middleArc);
+                // animateRadialComp(innerArc);
+
+                $scope.outerRadial.init();
+                $scope.middleRadial.init();
+                $scope.innerRadial.init();
+                // var animeId = window.requestAnimationFrame(outerRadial.drawArc);
                              
             };
         };
 
-        var clear = function (animateItemFn, items) {
-            window.setTimeout(function () {
-                $scope.ctx.clearRect(0, 0, $scope.canv.width, $scope.canv.height);
-                $scope.ctx.drawImage($scope.newImage, 0, 0);
-                _.forEach(items, function (item) {
-                    animateItemFn(item);
-                })
+        var clear = function (animateItemFn, item) {
+            $scope.ctx.clearRect(0, 0, $scope.canv.width, $scope.canv.height);
+            $scope.ctx.drawImage($scope.newImage, 0, 0);
+            window.setTimeout(function () {                
+                animateItemFn();
             }, 1000);
         }
 
-        var animateRadialComp = function (item) {
+        // var AnimateRadialComp = function (item) {
+        var RadialComponent = function (item) {
             var canv = $scope.canv;
             var ctx = $scope.ctx;
             var image = $scope.newImage; 
-            var iterator = item.iterator;
-            ctx.lineWidth = item.lineWidth;
-            ctx.strokeStyle = item.strokeColor;
+            var currAngle = 0;
+            var iterator = item.iterator;            
+            var clearRadialCount = 3;
+            var iterator = item.iterator;            
             
-            var drawArc = function () {
+            this.init = function () {
+                ctx.lineWidth = item.lineWidth;
+                ctx.strokeStyle = item.strokeColor;
+                iterator = item.iterator;            
+                currAngle = 0;
+                clearRadialCount = 3;
+                this.drawArc();
+            }
+
+            this.drawArc = function () {                
                 ctx.beginPath();
                 currAngle += iterator;
+                ctx.lineWidth = item.lineWidth;
+                ctx.strokeStyle = item.strokeColor;
                 ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
                 ctx.stroke();
-                var animeId = window.requestAnimationFrame(drawArc);
-                if (currAngle >+ 2 * Math.PI && --clearRadialCount <= 0) {
+                var animeId = window.requestAnimationFrame(this.drawArc.bind(this));
+                if (currAngle >= 2 * Math.PI && --clearRadialCount <= 0) {
                     window.cancelAnimationFrame(animeId);
-                    clear(animateRadialComp, [item]);
-                    clearRadialCount = 3;
+                    clear(this.init.bind(this), item);
+                    // clearRadialCount = 3;
                 }
+                // console.log('iterator IS ' + iterator);
             };
-
-            ctx.beginPath();
-            var currAngle = iterator;
-            ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
-            ctx.stroke();
-            window.requestAnimationFrame(drawArc);
         };
+        RadialComponent.prototype.clear = clear;
 
         var animateEyes = function (item) {
             window.setTimeout(function () {
