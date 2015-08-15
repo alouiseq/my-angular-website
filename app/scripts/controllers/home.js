@@ -134,7 +134,7 @@ angular.module('mywebsiteApp')
             startAngle: 0,                
             endAngle: 2 * Math.PI,
             iterator: 0.01,
-            strokeColor: 'rgb(117,117,117)',
+            strokeColor: '#fff',
             lineWidth: 1,
             counterClockwise: false
         };            
@@ -192,10 +192,9 @@ angular.module('mywebsiteApp')
                 // animateRadialComp(middleArc);
                 // animateRadialComp(innerArc);
 
-                $scope.outerRadial.init();
-                $scope.middleRadial.init();
-                $scope.innerRadial.init();
-                // var animeId = window.requestAnimationFrame(outerRadial.drawArc);
+                    $scope.outerRadial.init();                
+                    $scope.middleRadial.init();              
+                    $scope.innerRadial.init();
                              
             };
         };
@@ -235,12 +234,12 @@ angular.module('mywebsiteApp')
                 ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
                 ctx.stroke();
                 var animeId = window.requestAnimationFrame(this.drawArc.bind(this));
-                if (currAngle >= 2 * Math.PI && --clearRadialCount <= 0) {
+                if ((currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) && --clearRadialCount <= 0) {
+                // if (currAngle >= 2 * Math.PI) {
                     window.cancelAnimationFrame(animeId);
                     clear(this.init.bind(this), item);
                     // clearRadialCount = 3;
                 }
-                // console.log('iterator IS ' + iterator);
             };
         };
         RadialComponent.prototype.clear = clear;
