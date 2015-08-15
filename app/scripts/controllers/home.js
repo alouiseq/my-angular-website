@@ -19,8 +19,14 @@ angular.module('mywebsiteApp')
             two: false,
             three: false
         };
+
         var toggleBox = true;
-        var clearEyeCount = 2;
+
+        var canv = document.getElementById('canv');
+        var ctx = canv.getContext('2d');              
+        var image = new Image();
+        var elementsCount = 0;
+        var elements = [];
 
         // Canvas items        
         var topBoxSeam = {
@@ -169,21 +175,33 @@ angular.module('mywebsiteApp')
         };
 
         var setup = function () { 
-            $scope.canv = document.getElementById('canv');
-            $scope.ctx = canv.getContext('2d');              
-            $scope.newImage = new Image();
-            $scope.newImage.src = '/images/ironman-tech2.png';
+            canv = document.getElementById('canv');
+            ctx = canv.getContext('2d');              
+            image = new Image();
+            image.src = '/images/ironman-tech2.png';
 
             // Object instances
-            $scope.outerRadial = new RadialComponent(outerArc);
-            $scope.middleRadial = new RadialComponent(middleArc);
-            $scope.innerRadial = new RadialComponent(innerArc);
+            var outerRadial = new RadialComponent(outerArc);
+            elements.push(outerRadial);
+            elementsCount++;
+            var middleRadial = new RadialComponent(middleArc);
+                elements.push(middleRadial);
+                elementsCount++;
+            var innerRadial = new RadialComponent(innerArc);
+                elements.push(innerRadial);
+                elementsCount++;
+            var leftEyeGlow = new IronManEyes(leftEye);
+                elements.push(leftEyeGlow);
+                elementsCount++;
+            var rightEyeGlow = new IronManEyes(rightEye);
+                elements.push(rightEyeGlow);
+                elementsCount++;
 
             // process image on load
-            $scope.newImage.onload = function () {
-                $scope.canv.width = $scope.newImage.width;
-                $scope.canv.height = '575';
-                $scope.ctx.drawImage($scope.newImage, 0, 0);
+            image.onload = function () {
+                canv.width = image.width;
+                canv.height = '575';
+                ctx.drawImage(image, 0, 0);
 
                 // animateBoxSeam(topBoxSeam);
                 // animateEyes(leftEye);
@@ -192,90 +210,93 @@ angular.module('mywebsiteApp')
                 // animateRadialComp(middleArc);
                 // animateRadialComp(innerArc);
 
-                    $scope.outerRadial.init();                
-                    $scope.middleRadial.init();              
-                    $scope.innerRadial.init();
+                // $scope.outerRadial.init();                
+                // $scope.middleRadial.init();              
+                // $scope.innerRadial.init();
+
+                drawElements();
                              
             };
         };
 
-        var clear = function (animateItemFn, item) {
-            $scope.ctx.clearRect(0, 0, $scope.canv.width, $scope.canv.height);
-            $scope.ctx.drawImage($scope.newImage, 0, 0);
+        var drawElements = function () {
+            _.forEach(elements, function (elem) {
+                elem.update();
+            });
+        };
+
+        var clearAndUpdate = function () {
+            ctx.clearRect(0, 0, canv.width, canv.height);
+            ctx.drawImage(image, 0, 0);
             window.setTimeout(function () {                
-                animateItemFn();
+                drawElements();
             }, 1000);
-        }
+        };
 
         // var AnimateRadialComp = function (item) {
         var RadialComponent = function (item) {
-            var canv = $scope.canv;
-            var ctx = $scope.ctx;
-            var image = $scope.newImage; 
             var currAngle = 0;
-            var iterator = item.iterator;            
             var clearRadialCount = 3;
-            var iterator = item.iterator;            
-            
-            this.init = function () {
-                ctx.lineWidth = item.lineWidth;
-                ctx.strokeStyle = item.strokeColor;
-                iterator = item.iterator;            
+
+            this.update = function () {
                 currAngle = 0;
                 clearRadialCount = 3;
-                this.drawArc();
-            }
+                this.draw();
+            };
 
-            this.drawArc = function () {                
+            this.draw = function () {                
                 ctx.beginPath();
-                currAngle += iterator;
+                currAngle += item.iterator;
                 ctx.lineWidth = item.lineWidth;
                 ctx.strokeStyle = item.strokeColor;
                 ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
                 ctx.stroke();
-                var animeId = window.requestAnimationFrame(this.drawArc.bind(this));
+                elementsCount--;
+                var animeId = window.requestAnimationFrame(this.draw.bind(this));
                 if ((currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) && --clearRadialCount <= 0) {
-                // if (currAngle >= 2 * Math.PI) {
                     window.cancelAnimationFrame(animeId);
-                    clear(this.init.bind(this), item);
-                    // clearRadialCount = 3;
+                    clearAndUpdate();
                 }
             };
         };
-        RadialComponent.prototype.clear = clear;
+        // RadialComponent.prototype.clear = clear;
 
-        var animateEyes = function (item) {
-            window.setTimeout(function () {
-                var canv = $scope.canv;
-                var ctx = $scope.ctx;
-                var image = $scope.newImage; 
-                var currX = item.currX;
-                var currY = item.currY;               
-                ctx.lineWidth = 4;
-                ctx.strokeStyle = '#15738b';
-                ctx.fillStyle = '#fefefe';
-                ctx.save();
-                ctx.beginPath();
-                
-                ctx.moveTo(item.startX, item.startY);
-                ctx.lineTo(currX, currY);
-                for (var i=0; i<item.offsetsX.length; i++) {
-                    currX = currX + item.offsetsX[i]; 
-                    currY = currY + item.offsetsY[i];
+        var IronManEyes = function (item) {
+            var clearEyeCount = 2;
+
+            this.update = function () {
+                this.draw();
+            };
+
+            this.draw = function () {
+                window.setTimeout(function () {                 
+                    var currX = item.currX;
+                    var currY = item.currY;               
+                    ctx.lineWidth = 4;
+                    ctx.strokeStyle = '#15738b';
+                    ctx.fillStyle = '#fefefe';
+                    
+                    ctx.beginPath();                 
+                    ctx.moveTo(item.startX, item.startY);
                     ctx.lineTo(currX, currY);
-                }
+                    for (var i=0; i<item.offsetsX.length; i++) {
+                        currX = currX + item.offsetsX[i]; 
+                        currY = currY + item.offsetsY[i];
+                        ctx.lineTo(currX, currY);
+                    }
 
-                ctx.fill();
-                ctx.stroke();
-                ctx.restore();
+                    ctx.fill();
+                    ctx.stroke();
+                    elementsCount--;
 
-                if (--clearEyeCount <= 0) {
-                    clear(animateEyes, [leftEye, rightEye]);
-                    clearEyeCount = 2;
-                }
+                    if (--clearEyeCount <= 0) {
+                        clearAndUpdate();
+                        clearEyeCount = 2;
+                    }
 
-            }, 5000);            
-        }
+                }, 5000);  
+            };          
+        };
 
         var animateBoxSeam = function (item) { 
             var canv = $scope.canv;
