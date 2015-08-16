@@ -19,15 +19,11 @@ angular.module('mywebsiteApp')
             two: false,
             three: false
         };
-
-        var toggleBox = true;
-
         var canv = document.getElementById('canv');
         var ctx = canv.getContext('2d');              
         var image = new Image();
         var elementsCount = 0;
         var elementsCounter = 0;
-        // var $scope.elementsCount = 0;
         var elements = [];
 
         // Canvas items        
@@ -45,13 +41,13 @@ angular.module('mywebsiteApp')
             cpy1: 160,
             cpx2: 1592,
             cpy2: 159,
-            endX: 1615,
+            endX: 1600,
             endY: 127, 
             rad: 30
         };  
 
         var bottomBoxSeam = {
-            offsetXleft: 1.5,
+            offsetXleft: 1.35,
             offsetXmid: 1,
             offsetXright: 1.2,
             startX: 1535,
@@ -64,7 +60,7 @@ angular.module('mywebsiteApp')
             cpy1: 160,
             cpx2: 1592,
             cpy2: 159,
-            endX: 1615,
+            endX: 1614,
             endY: 157, 
             rad: 30
         }; 
@@ -183,41 +179,27 @@ angular.module('mywebsiteApp')
             image.src = '/images/ironman-tech2.png';
 
             // Object instances
-            var outerRadial = new RadialComponent(outerArc);
-            elements.push(outerRadial);
+            elements.push(new RadialComponent(outerArc));
             elementsCount++;
-            var middleRadial = new RadialComponent(middleArc);
-                elements.push(middleRadial);
-                elementsCount++;
-            var innerRadial = new RadialComponent(innerArc);
-                elements.push(innerRadial);
-                elementsCount++;
-            var leftEyeGlow = new IronManEyes(leftEye);
-                elements.push(leftEyeGlow);
-                elementsCount++;
-            var rightEyeGlow = new IronManEyes(rightEye);
-                elements.push(rightEyeGlow);
-                elementsCount++;
+            elements.push(new RadialComponent(middleArc));
+            elementsCount++;
+            elements.push(new RadialComponent(innerArc));
+            elementsCount++;
+            elements.push(new IronManEyes(leftEye));
+            elementsCount++;
+            elements.push(new IronManEyes(rightEye));
+            elementsCount++;
+            elements.push(new BoxSeam(topBoxSeam));
+            elementsCount++;
+            elements.push(new BoxSeam(bottomBoxSeam));
+            elementsCount++;
 
             // process image on load
             image.onload = function () {
                 canv.width = image.width;
                 canv.height = '575';
                 ctx.drawImage(image, 0, 0);
-
-                // animateBoxSeam(topBoxSeam);
-                // animateEyes(leftEye);
-                // animateEyes(rightEye);
-                // animateRadialComp(outerArc);
-                // animateRadialComp(middleArc);
-                // animateRadialComp(innerArc);
-
-                // $scope.outerRadial.init();                
-                // $scope.middleRadial.init();              
-                // $scope.innerRadial.init();
-
-                drawElements();
-                             
+                drawElements();                            
             };
         };
 
@@ -235,14 +217,11 @@ angular.module('mywebsiteApp')
             }, 1000);
         };
 
-        // var AnimateRadialComp = function (item) {
         var RadialComponent = function (item) {
             var currAngle = 0;
-            var clearRadialCount = 3;
 
             this.update = function () {
                 currAngle = 0;
-                clearRadialCount = 3;
                 this.draw();
             };
 
@@ -255,7 +234,6 @@ angular.module('mywebsiteApp')
                 ctx.stroke();
                 var animeId = window.requestAnimationFrame(this.draw.bind(this));
                 if (currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) {
-                    // if ((currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) && --clearRadialCount <= 0) {
                     window.cancelAnimationFrame(animeId);
                     elementsCounter++;                    
                 }
@@ -265,11 +243,8 @@ angular.module('mywebsiteApp')
                 }
             };
         };
-        // RadialComponent.prototype.clear = clear;
 
         var IronManEyes = function (item) {
-            var clearEyeCount = 2;
-
             this.update = function () {
                 this.draw();
             };
@@ -285,6 +260,7 @@ angular.module('mywebsiteApp')
                     ctx.beginPath();                 
                     ctx.moveTo(item.startX, item.startY);
                     ctx.lineTo(currX, currY);
+
                     for (var i=0; i<item.offsetsX.length; i++) {
                         currX = currX + item.offsetsX[i]; 
                         currY = currY + item.offsetsY[i];
@@ -298,31 +274,40 @@ angular.module('mywebsiteApp')
                     if (elementsCounter >= elementsCount) {
                         elementsCounter = 0;
                         clearAndUpdate();
-                        // clearEyeCount = 2;
                     }
 
-                }, 8000);  
+                }, 7000);  
             };          
         };
 
-        var animateBoxSeam = function (item) { 
-            var canv = $scope.canv;
-            var ctx = $scope.ctx;
-            var image = $scope.newImage;
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = '#9ec1fb';
+        var BoxSeam = function (item) { 
+            var animeId;
             var currX = item.startX;
             var currY = item.startY;
-            ctx.beginPath();
-            ctx.moveTo(item.startX, item.startY);
-            var animeId;
 
+            this.update = function () {
+                currX = item.startX;
+                currY = item.startY;
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#9ec1fb';
+                this.draw();
+            };
+
+            this.draw = function () {
+                window.setTimeout(animateLeftLine.bind(this), 100);
+            };
+
+           
             var animateLeftLine = function () {
+                ctx.beginPath();
+                ctx.moveTo(item.startX, item.startY);
                 ctx.lineTo(currX, currY);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#9ec1fb';
                 ctx.stroke();
                 currX += item.offsetXleft;
                 currY++;
-                animeId = window.setTimeout(animateLeftLine, 100);
+                animeId = window.setTimeout(animateLeftLine.bind(this), 100);
                 if (currX >= item.midX && currY >= item.midY) {
                     window.clearTimeout(animeId);
                     animateMidLine();
@@ -330,10 +315,14 @@ angular.module('mywebsiteApp')
             };
 
             var animateMidLine = function () {
+                ctx.beginPath();
+                ctx.moveTo(item.midX, item.midY);
                 ctx.lineTo(currX, currY);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#9ec1fb';
                 ctx.stroke();
                 currX += item.offsetXmid;
-                animeId = window.setTimeout(animateMidLine, 100);
+                animeId = window.setTimeout(animateMidLine.bind(this), 100);
                 if (currX >= item.curveX && currY >= item.curveY) {
                     window.clearTimeout(animeId);
                     animateRightLine();
@@ -341,33 +330,25 @@ angular.module('mywebsiteApp')
             };
 
             var animateRightLine = function () {
+                ctx.beginPath();
+                ctx.moveTo(item.curveX, item.curveY);
                 ctx.lineTo(currX, currY);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = '#9ec1fb';
                 ctx.stroke();
                 currX += item.offsetXright;
                 currY--;
-                animeId = window.setTimeout(animateRightLine, 100);
+                animeId = window.setTimeout(animateRightLine.bind(this), 100);
                 if (currX >= item.endX && currY <= item.endY) {
                     window.clearTimeout(animeId);
-                    ctx.clearRect(0, 0, canv.width, canv.height);
-                    ctx.drawImage(image, 0, 0);
-                    if (toggleBox) {
-                        animateBoxSeam(topBoxSeam);
-                    } else {
-                        animateBoxSeam(bottomBoxSeam);  
-                    }
-                    toggleBox = !toggleBox;
+                    elementsCounter++;
+                }
+
+                if (elementsCounter >= elementsCount) {
+                    elementsCounter = 0;
+                    clearAndUpdate();
                 }
             };
-
-            var animateArcTo = function () {
-                ctx.arcTo(item.cpx1, item.cpy1, item.cpx2, item.cpy2, item.rad); 
-                ctx.stroke();
-                // animateRightLine();
-                // ctx.lineTo(item.endX, item.endY);               
-                // ctx.stroke();
-            };
-
-            window.setTimeout(animateLeftLine, 100);
          
         };
 
@@ -376,20 +357,8 @@ angular.module('mywebsiteApp')
 
         // Add text and image to the top of the page
         customPageHeaders();
-
-        // Modify pixels for header background
-        // manipulatePixels();         
         
         // Initial canvas setup
         setup();        
-
-
-        /*** WATCHERS ***/
-
-        // $scope.$watch('elementsCount', function (newVal, oldVal) {
-        //     if (newVal <= 0) {
-        //         clearAndUpdate();
-        //     }
-        // });
 
     });
