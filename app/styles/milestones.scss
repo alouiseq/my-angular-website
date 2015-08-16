@@ -15,16 +15,16 @@
     @mixin bubble {
         display: inline-block;
         border: 1px solid black;
-        border-radius: 40px;
+        // border-radius: 40px;
         padding: 20px;
         background-color: #61e8ec;        
         font-size: 20px;
         position: absolute;
+        top: 75%;
     }
 
     .event-time {
         @include bubble; 
-        top: 75%;
         box-shadow: 5px 5px 10px #000;
     }
 
@@ -49,22 +49,17 @@
             box-shadow 1s ease-out;
         @include bubble;
         transform: scale(1.5,1.5);        
-        // max-height: 200px;
-        // width: 200px;
-        border-radius: 111px;
         text-align: center;
-        // left: 56%;
-        // top: 65%;
         z-index: 999;
         box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.56);
 
-        div {
-            margin-top: 5%;
-        }
+        // div {
+        //     margin-top: 5%;
+        // }
 
-        span {
-            vertical-align: middle;
-        }
+        // span {
+        //     vertical-align: middle;
+        // }
     }
 
     hr.line {

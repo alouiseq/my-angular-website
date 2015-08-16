@@ -10,14 +10,17 @@
 angular.module('mywebsiteApp')
     .controller('ContactCtrl', function ($scope, $timeout) {
 
-		/*** Defaults ***/
+		/*** DEFAULTS ***/
 
         $scope.title = 'Let\'s Talk';
         $scope.info = 'How to reach me';
 
 
-        /*** Initialize ***/
+        /*** INITIALIZE ***/
 
+        // Hide canvas element outside home
+        $('#canv').css('display', 'none');
+    
       	// Activate selected page header
         $('.nav').find('a').removeClass('active');
         $('.contact').children('a').addClass('active'); 

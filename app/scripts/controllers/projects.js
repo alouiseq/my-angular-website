@@ -10,12 +10,15 @@
 angular.module('mywebsiteApp')
     .controller('ProjectsCtrl', function ($scope, $timeout) {
 
-        /*** Defaults ***/
+        /*** DEFAULTS ***/
 
         $scope.title = 'Projects';
         $scope.info = 'Work and Personal Stuff I\'ve worked on';
 
-        /*** Initialize ***/
+        /*** INITIALIZE ***/
+
+        // Hide canvas element outside home
+        $('#canv').css('display', 'none');    
 
         // Activate selected page header 
         $('.nav').find('a').removeClass('active');

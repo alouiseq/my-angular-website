@@ -10,13 +10,16 @@
 angular.module('mywebsiteApp')
     .controller('ResumeCtrl', function ($scope, $timeout) {
         
-        /*** Defaults ***/
+        /*** DEFAULTS ***/
 
         $scope.title = 'Skills';
         $scope.info = 'Qualifications and Experiences';
 
 
-        /*** Initialize ***/
+        /*** INITIALIZE ***/
+
+        // Hide canvas element outside home
+        $('#canv').css('display', 'none');    
 
         // Activate selected page header
         $('.nav').find('a').removeClass('active');

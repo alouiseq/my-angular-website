@@ -10,7 +10,7 @@
 angular.module('mywebsiteApp')
     .controller('HomeCtrl', function ($scope, $timeout) {
 
-        /*** Defaults ***/
+        /*** DEFAULTS ***/
 
         $scope.title = 'Front-end Developer';
         $scope.info = '@ Shutterfly';
@@ -144,7 +144,7 @@ angular.module('mywebsiteApp')
         };            
           
 
-        /*** Methods ***/
+        /*** METHODS ***/
 
         // Animate project section
         $scope.showInfo = function (index, showProj) {
@@ -355,6 +355,9 @@ angular.module('mywebsiteApp')
 
 
         /*** INITIALIZE ***/
+
+        // Display canvas element
+        $('#canv').css('display', 'inline-block');
 
         // Add text and image to the top of the page
         customPageHeaders();

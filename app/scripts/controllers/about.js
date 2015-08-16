@@ -10,13 +10,16 @@
 angular.module('mywebsiteApp')
   .controller('AboutCtrl', function ($scope, $timeout) {
     
-        /*** Defaults ***/
+        /*** DEFAULTS ***/
 
         $scope.title = 'Who am I?';
         $scope.info = 'Get to know me';
 
 
-        /*** Initialize ***/
+        /*** INITIALIZE ***/
+
+        // Hide canvas element outside home
+        $('#canv').css('display', 'none');
 
         // Activate selected page header 
         $('.nav').find('a').removeClass('active');
