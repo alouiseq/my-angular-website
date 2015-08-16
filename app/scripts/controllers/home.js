@@ -114,7 +114,7 @@ angular.module('mywebsiteApp')
             startAngle: 0,                
             endAngle: 2 * Math.PI,
             iterator: 0.01,
-            strokeColor: 'rgb(85,49,16)',
+            strokeColor: 'rgba(85,49,16, 0.5)',
             lineWidth: 4,
             counterClockwise: false
         }; 
@@ -198,7 +198,8 @@ angular.module('mywebsiteApp')
             image.onload = function () {
                 canv.width = image.width;
                 canv.height = '575';
-                ctx.drawImage(image, 0, 0);
+                // ctx.globalAlpha = 0.5;
+                ctx.drawImage(image, 0, 0);                
                 drawElements();                            
             };
         };
