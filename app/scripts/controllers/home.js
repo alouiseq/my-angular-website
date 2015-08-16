@@ -26,6 +26,8 @@ angular.module('mywebsiteApp')
         var ctx = canv.getContext('2d');              
         var image = new Image();
         var elementsCount = 0;
+        var elementsCounter = 0;
+        // var $scope.elementsCount = 0;
         var elements = [];
 
         // Canvas items        
@@ -251,10 +253,14 @@ angular.module('mywebsiteApp')
                 ctx.strokeStyle = item.strokeColor;
                 ctx.arc(item.startX, item.startY, item.rad, item.startAngle, currAngle, item.counterClockwise);
                 ctx.stroke();
-                elementsCount--;
                 var animeId = window.requestAnimationFrame(this.draw.bind(this));
-                if ((currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) && --clearRadialCount <= 0) {
+                if (currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) {
+                    // if ((currAngle <= -2 * Math.PI || currAngle >= 2 * Math.PI) && --clearRadialCount <= 0) {
                     window.cancelAnimationFrame(animeId);
+                    elementsCounter++;                    
+                }
+                if (elementsCounter >= elementsCount) {
+                    elementsCounter = 0;
                     clearAndUpdate();
                 }
             };
@@ -287,14 +293,15 @@ angular.module('mywebsiteApp')
 
                     ctx.fill();
                     ctx.stroke();
-                    elementsCount--;
+                    elementsCounter++;
 
-                    if (--clearEyeCount <= 0) {
+                    if (elementsCounter >= elementsCount) {
+                        elementsCounter = 0;
                         clearAndUpdate();
-                        clearEyeCount = 2;
+                        // clearEyeCount = 2;
                     }
 
-                }, 5000);  
+                }, 8000);  
             };          
         };
 
@@ -375,5 +382,14 @@ angular.module('mywebsiteApp')
         
         // Initial canvas setup
         setup();        
+
+
+        /*** WATCHERS ***/
+
+        // $scope.$watch('elementsCount', function (newVal, oldVal) {
+        //     if (newVal <= 0) {
+        //         clearAndUpdate();
+        //     }
+        // });
 
     });
