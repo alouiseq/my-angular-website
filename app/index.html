@@ -85,7 +85,7 @@
 
         <!-- build:js(.) scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
+     <!--    <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -98,39 +98,19 @@
         <script src="bower_components/angular-touch/angular-touch.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/lodash/lodash.js"></script>
+        <script src="bower_components/lodash/lodash.js"></script> -->
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-            <script src="scripts/app.js"></script>
+            <script data-main="scripts/main.js" src="bower_components/requirejs/require.js"></script>
+         <!--    <script src="scripts/app.js"></script>
             <script src="scripts/controllers/home.js"></script>
             <script src="scripts/controllers/projects.js"></script>
             <script src="scripts/controllers/resume.js"></script>
             <script src="scripts/controllers/about.js"></script>
             <script src="scripts/controllers/contact.js"></script>
-            <script src="scripts/directives/milestones.js"></script>
+            <script src="scripts/directives/milestones.js"></script> -->
         <!-- endbuild -->
-
-        <!-- Sticky headers -->
-        <script>
-            $(window).on('scroll', function () {
-                if ($(this).scrollTop() > 155) {
-                    $('#nav-title1').addClass('sticky-title1');
-                    $('#nav-title2').addClass('sticky-title2');
-                } else {
-                    $('#nav-title1').removeClass('sticky-title1');
-                    $('#nav-title2').removeClass('sticky-title2');
-                }
-                if ($(this).scrollTop() > 366) {
-                    $('.header-wrapper').addClass('sticky-navbar');
-                    $('#nav-title2').removeClass('sticky-title2');
-                } else {
-                    $('.header-wrapper').removeClass('sticky-navbar');
-
-                }
-            });
-        </script>
-
 </body>
 </html>
