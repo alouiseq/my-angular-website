@@ -1,0 +1,591 @@
+/* line 3, _home.scss */
+#home .background-title,
+#home .projects-title,
+#home .projects-button,
+#home .more-info,
+#home .background-body {
+  text-align: center;
+}
+/* line 11, _home.scss */
+#home .background-title,
+#home .projects-title {
+  margin-bottom: 20px;
+}
+/* line 16, _home.scss */
+#home .more-info {
+  font-size: 18px;
+}
+/* line 21, _home.scss */
+#home .projects-button .btn {
+  margin: 25px 0 10px 0;
+}
+/* line 24, _home.scss */
+#home .projects-button .btn:hover {
+  background-color: darkgray;
+}
+/* line 30, _home.scss */
+#home .more-info > div {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 25px 0 10px 0;
+  background-color: lightgray;
+}
+/* line 38, _home.scss */
+#home .project {
+  display: inline-block;
+  border: 1px solid black;
+  height: 305px;
+  width: 240px;
+  margin: 0 53px;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 59, _home.scss */
+#home .projects-list #site {
+  background-image: url("/images/site-image.jpg");
+  background-size: 186%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 999;
+}
+/* line 63, _home.scss */
+#home .projects-list #site .meta {
+  margin: 40px 10px 10px 10px;
+}
+/* line 67, _home.scss */
+#home .projects-list #site:hover {
+  transition: all 1s ease-in;
+  background-image: none;
+  background-color: bisque;
+}
+/* line 72, _home.scss */
+#home .projects-list #todo {
+  background-image: url("/images/todosKO.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 999;
+}
+/* line 76, _home.scss */
+#home .projects-list #todo .meta {
+  margin: 40px 10px 10px 10px;
+}
+/* line 80, _home.scss */
+#home .projects-list #todo:hover {
+  transition: all 1s ease-in;
+  background-image: none;
+  background-color: burlywood;
+}
+/* line 85, _home.scss */
+#home .projects-list #space-duel {
+  background-image: url("/images/space-duel.png");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 999;
+}
+/* line 89, _home.scss */
+#home .projects-list #space-duel .meta {
+  margin: 40px 10px 10px 10px;
+}
+/* line 93, _home.scss */
+#home .projects-list #space-duel:hover {
+  transition: all 1s ease-in;
+  background-image: none;
+  background-color: lightsalmon;
+}
+
+/* line 2, _projects.scss */
+#projects .title {
+  text-align: center;
+}
+
+/* line 3, _resume.scss */
+#resume .languages > li,
+#resume .tasks > li {
+  padding-bottom: 10px;
+}
+/* line 8, _resume.scss */
+#resume .experience,
+#resume .education {
+  margin-top: 50px;
+}
+/* line 13, _resume.scss */
+#resume .role {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+/* line 18, _resume.scss */
+#resume .job {
+  margin-bottom: 32px;
+}
+/* line 22, _resume.scss */
+#resume span.set-green {
+  color: green;
+}
+/* line 26, _resume.scss */
+#resume .degree {
+  margin-bottom: 8px;
+}
+/* line 30, _resume.scss */
+#resume .company,
+#resume .almamater {
+  color: brown;
+}
+/* line 35, _resume.scss */
+#resume .company {
+  margin-bottom: 8px;
+}
+/* line 39, _resume.scss */
+#resume .almamater {
+  margin: 15px 0;
+}
+/* line 43, _resume.scss */
+#resume .education {
+  margin-bottom: 20px;
+}
+/* line 47, _resume.scss */
+#resume .more-info {
+  text-align: center;
+}
+/* line 51, _resume.scss */
+#resume .more-info > div:hover {
+  background-color: darkgray;
+}
+/* line 55, _resume.scss */
+#resume .more-info > div {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px 10px;
+  margin: 25px 0 10px 0;
+  background-color: lightgray;
+}
+/* line 63, _resume.scss */
+#resume .resume-button {
+  color: #2A5B86;
+}
+
+/* line 1, _contact.scss */
+.contact-info > .title,
+.message-form .title {
+  margin-bottom: 25px;
+}
+
+/* line 6, _contact.scss */
+.name-text {
+  color: gray;
+}
+
+/* line 10, _contact.scss */
+.info {
+  float: left;
+}
+
+/* line 14, _contact.scss */
+.self-image {
+  float: right;
+  width: 200px;
+  height: 200px;
+}
+
+/* line 20, _contact.scss */
+.message-form {
+  clear: both;
+  padding-top: 50px;
+}
+
+/* line 25, _contact.scss */
+.msg-form {
+  float: left;
+  width: 55%;
+  margin-bottom: 55px;
+}
+
+/* line 31, _contact.scss */
+.google-maps {
+  float: right;
+}
+
+/* line 35, _contact.scss */
+.name {
+  width: 49.5%;
+  margin-bottom: 25px;
+}
+
+/* line 41, _contact.scss */
+.message, #email,
+#subject {
+  width: 100%;
+}
+
+/* line 45, _contact.scss */
+#email,
+#subject {
+  margin-bottom: 25px;
+}
+
+/* line 51, _contact.scss */
+.submit {
+  float: right;
+}
+
+/* line 3, _about.scss */
+#about .career-growth {
+  position: relative;
+}
+/* line 7, _about.scss */
+#about .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 12, _about.scss */
+#about .facts-list {
+  text-align: center;
+}
+/* line 16, _about.scss */
+#about .company {
+  display: inline-block;
+  float: left;
+  width: 30%;
+  height: 400px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 20px;
+  background-color: gold;
+}
+/* line 27, _about.scss */
+#about .company.one,
+#about .company.two {
+  margin-right: 5%;
+}
+/* line 32, _about.scss */
+#about p.title {
+  margin-bottom: 30%;
+}
+/* line 36, _about.scss */
+#about .left-arrow {
+  position: absolute;
+  left: -80px;
+  top: 210px;
+  border-top: 25px solid transparent;
+  border-right: 45px solid gray;
+  border-bottom: 25px solid transparent;
+}
+/* line 45, _about.scss */
+#about .left-arrow:hover {
+  border-right: 45px solid black;
+}
+/* line 49, _about.scss */
+#about .right-arrow {
+  position: absolute;
+  right: -80px;
+  top: 210px;
+  border-top: 25px solid transparent;
+  border-left: 45px solid gray;
+  border-bottom: 25px solid transparent;
+}
+/* line 58, _about.scss */
+#about .right-arrow:hover {
+  border-left: 45px solid black;
+}
+
+/* line 10, main.scss */
+body {
+  font-family: 'Bangers', cursive;
+  padding: 0;
+  font-size: 15px;
+}
+
+/* line 16, main.scss */
+.title {
+  font-size: 30px;
+}
+
+/* line 20, main.scss */
+.desc {
+  font-size: 20px;
+}
+
+/* line 24, main.scss */
+#nav-title1 em {
+  font-size: 50px;
+}
+
+/* line 28, main.scss */
+hr {
+  margin: 60px 0;
+}
+
+/* line 44, main.scss */
+.home-background {
+  height: 575px;
+  background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/ironman-tech2.png");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: 100%, 75%;
+  background-position: center, center 20%;
+}
+
+/* line 50, main.scss */
+.projects-background {
+  height: 575px;
+  background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/marvel-heroes.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 15%;
+}
+
+/* line 56, main.scss */
+.resume-background {
+  height: 575px;
+  background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/avengers2.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0% 0%;
+}
+
+/* line 62, main.scss */
+.about-background {
+  height: 575px;
+  background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/avengers2.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0% 61%;
+}
+
+/* line 68, main.scss */
+.contact-background {
+  height: 575px;
+  background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/iron-man-black.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 18%;
+}
+
+/* line 74, main.scss */
+.footer {
+  margin-top: 80px;
+}
+
+/* line 78, main.scss */
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+/* line 86, main.scss */
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+/* line 93, main.scss */
+.header {
+  margin-bottom: 10px;
+  /* Make the masthead heading the same height as the navigation */
+}
+/* line 98, main.scss */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+/* line 107, main.scss */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  height: 250px;
+  background-color: #3c3c3c;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  /* line 117, main.scss */
+  .container {
+    max-width: 1080px !important;
+  }
+
+  /* Remove the padding we set earlier */
+  /* line 122, main.scss */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  /* line 128, main.scss */
+  .header {
+    margin-bottom: 70px;
+  }
+}
+/* line 133, main.scss */
+.active {
+  border: 2px solid #fff;
+}
+
+/* line 137, main.scss */
+.nav-header {
+  color: #fff;
+  font-size: 20px;
+}
+
+/* line 142, main.scss */
+.nav-headers {
+  position: fixed;
+  top: 0;
+  right: 95px;
+  margin: 5px 35px 0 0;
+}
+
+/* line 149, main.scss */
+.sticky-navbar {
+  transition: all 1s ease-in;
+  position: fixed;
+  width: 100%;
+  height: 65px;
+  top: 0;
+  left: 0;
+  background-color: #2d2d2d;
+  z-index: 999;
+}
+
+/* line 160, main.scss */
+.navbar-brand, .footer-brand {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background-color: gray;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+/* line 173, main.scss */
+#titles {
+  opacity: 0;
+}
+
+/* line 177, main.scss */
+.titles-animate {
+  transition: opacity 1s ease-in;
+  opacity: 1 !important;
+}
+
+/* line 182, main.scss */
+.nav-title {
+  color: #fff;
+  position: absolute;
+  margin-left: 50%;
+}
+
+/* line 188, main.scss */
+#nav-title1 {
+  top: 140px;
+}
+
+/* line 192, main.scss */
+#nav-title2 {
+  top: 210px;
+}
+
+/* line 196, main.scss */
+.nav-title > h1,
+.nav-title > h2,
+.nav-title > h3 {
+  margin-left: -50%;
+}
+
+/* line 202, main.scss */
+.sticky-title1 {
+  top: -12px !important;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* line 208, main.scss */
+.sticky-title2 {
+  top: 55px !important;
+  position: fixed;
+  z-index: 9999;
+}
+
+/* line 214, main.scss */
+.navbar-toggle {
+  background-color: white;
+}
+
+/* line 218, main.scss */
+.icon-bar {
+  background-color: black;
+}
+
+/* line 222, main.scss */
+.foot-wrapper {
+  margin-left: 50%;
+}
+
+/* line 226, main.scss */
+.navbar-footer {
+  margin-left: -37%;
+}
+
+/* line 231, main.scss */
+.me {
+  font-size: 17px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* line 237, main.scss */
+.footer-brand {
+  position: relative !important;
+  top: 0;
+  left: 1px;
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  vertical-align: middle;
+}
+
+/* line 248, main.scss */
+.copyright {
+  clear: both;
+  text-align: center;
+  padding-top: 14px;
+}
+
+/* line 254, main.scss */
+.social-icons {
+  text-align: center;
+}
+/* line 256, main.scss */
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  margin: 25px;
+}
+
+/* line 263, main.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */

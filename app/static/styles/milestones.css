@@ -1,0 +1,76 @@
+/* line 1, milestones.scss */
+#milestones {
+  position: relative;
+  margin-bottom: 185px;
+}
+/* line 5, milestones.scss */
+#milestones .milestones-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+/* line 11, milestones.scss */
+#milestones .timeline {
+  margin: 50px 0;
+}
+/* line 26, milestones.scss */
+#milestones .event-time {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 20px;
+  background-color: #61e8ec;
+  font-size: 20px;
+  position: absolute;
+  top: 75%;
+  box-shadow: 5px 5px 10px #000;
+}
+/* line 31, milestones.scss */
+#milestones #index-0 {
+  left: 2%;
+}
+/* line 34, milestones.scss */
+#milestones #index-1 {
+  left: 68.1%;
+}
+/* line 37, milestones.scss */
+#milestones #index-2 {
+  left: 75.4%;
+}
+/* line 40, milestones.scss */
+#milestones #index-3 {
+  left: 82.7%;
+}
+/* line 43, milestones.scss */
+#milestones #index-4 {
+  left: 90%;
+}
+/* line 47, milestones.scss */
+#milestones .blow-up {
+  transition: transform 1s ease-in, box-shadow 1s ease-out;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 20px;
+  background-color: #61e8ec;
+  font-size: 20px;
+  position: absolute;
+  top: 75%;
+  transform: scale(1.5, 1.5);
+  text-align: center;
+  z-index: 999;
+  box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.56);
+}
+/* line 65, milestones.scss */
+#milestones hr.line {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  border-color: black;
+  z-index: -1;
+}
+/* line 73, milestones.scss */
+#milestones hr.hr-clear {
+  position: relative;
+  top: 120px;
+}
+
+/*# sourceMappingURL=milestones.css.map */
