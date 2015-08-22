@@ -100,6 +100,18 @@
 #projects .title {
   text-align: center;
 }
+/* line 6, _projects.scss */
+#projects .snapshot {
+  position: relative;
+  left: 0;
+}
+/* line 11, _projects.scss */
+#projects .desc {
+  position: relative;
+  right: 0;
+  display: inline-block;
+  width: 45%;
+}
 
 /* line 3, _resume.scss */
 #resume .languages > li,

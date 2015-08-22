@@ -2,4 +2,17 @@
     .title {
         text-align: center;
     }
+
+    .snapshot {
+        position: relative;
+        left: 0;
+    }
+
+    .desc {
+        position: relative;
+        right: 0;
+        display: inline-block;
+        width: 45%;
+
+    }
 }
