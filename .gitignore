@@ -4,3 +4,6 @@ bower_components
 node_modules
 /**/.DS_Store
 flask
+/My_Website.egg-info/
+dist/My_Website-3.0-py2.7.egg
+setup.py
