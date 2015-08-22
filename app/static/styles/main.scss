@@ -18,7 +18,7 @@ body {
 }
 
 .desc {
-    font-size: 20px;
+    font-size: 23px;
 }
 
 #nav-title1 em {
@@ -130,19 +130,25 @@ hr {
     }
 }
 
-.active {
+a.anomaly {
+    color: #E47917;
+}
+
+.nav-header.active {
     border: 2px solid #fff;
+    line-height: 16px;
 }
 
 .nav-header {
     color: #fff;
     font-size: 20px;
+    height: 50px;
 }
 
 .nav-headers {
     position: fixed;
     top: 0;
-    right: 95px;
+    right: 0px;
     margin: 5px 35px 0 0;
 }
 

@@ -9,36 +9,22 @@ define(['angular'], function (angular) {
      * # AboutCtrl
      * Controller of the mywebsiteApp
      */
+     
     angular.module('mywebsiteApp.controllers.AboutCtrl', [])
-      .controller('AboutCtrl', function ($scope, $timeout) {
-        
+        .controller('AboutCtrl', function ($scope, $timeout, Settings) {
+            
             /*** DEFAULTS ***/
 
             $scope.title = 'Who am I?';
             $scope.info = 'Get to know me';
+            var pageName = 'about';
+            var pageClass = 'about-background';
 
 
             /*** INITIALIZE ***/
+            
+            // update based on current page
+            Settings.customizeHeader($scope.title, $scope.info, pageName, pageClass);
 
-            // Hide canvas element outside home
-            $('#canv').css('display', 'none');
-
-            // Activate selected page header 
-            $('.nav').find('a').removeClass('active');
-            $('.about').children('a').addClass('active');   
-
-            // Add specific data to nav area
-            $('#nav-title1').find('em').text($scope.title);
-            $('#nav-title2').find('h2').text($scope.info);
-            $('#titles').removeClass('titles-animate');
-            $timeout(function () {
-                $('#titles').addClass('titles-animate');
-            });
-
-            // Custom nav header background
-            $('.navbar').removeClass(function () {
-                return $(this).attr('class');
-            });
-            $('#navbar').addClass('navbar custom-navbar about-background');              
-      });
+        });
 });
