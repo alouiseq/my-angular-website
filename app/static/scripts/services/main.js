@@ -1,4 +1,4 @@
-define(['angular', 'services/settings'], function (angular) {
+define(['angular', './settings'], function (angular) {
 	'use strict';
 
 	angular.module('mywebsiteApp.services', [

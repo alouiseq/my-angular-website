@@ -158,7 +158,7 @@
   display: inline-block;
   border: 1px solid black;
   padding: 5px 10px;
-  margin: 25px 0 10px 0;
+  margin: 55px 0 10px 0;
   background-color: lightgray;
 }
 /* line 63, _resume.scss */
@@ -261,7 +261,7 @@
 }
 /* line 32, _about.scss */
 #about p.title {
-  margin-bottom: 30%;
+  margin-bottom: 14%;
 }
 /* line 36, _about.scss */
 #about .left-arrow {
@@ -304,7 +304,7 @@ body {
 
 /* line 20, main.scss */
 .desc {
-  font-size: 20px;
+  font-size: 23px;
 }
 
 /* line 24, main.scss */
@@ -434,25 +434,32 @@ hr {
   }
 }
 /* line 133, main.scss */
-.active {
-  border: 2px solid #fff;
+a.anomaly {
+  color: #E47917;
 }
 
 /* line 137, main.scss */
-.nav-header {
-  color: #fff;
-  font-size: 20px;
+.nav-header.active {
+  border: 2px solid #fff;
+  line-height: 16px;
 }
 
 /* line 142, main.scss */
+.nav-header {
+  color: #fff;
+  font-size: 20px;
+  height: 50px;
+}
+
+/* line 148, main.scss */
 .nav-headers {
   position: fixed;
   top: 0;
-  right: 95px;
+  right: 0px;
   margin: 5px 35px 0 0;
 }
 
-/* line 149, main.scss */
+/* line 155, main.scss */
 .sticky-navbar {
   transition: all 1s ease-in;
   position: fixed;
@@ -464,7 +471,7 @@ hr {
   z-index: 999;
 }
 
-/* line 160, main.scss */
+/* line 166, main.scss */
 .navbar-brand, .footer-brand {
   display: inline-block;
   color: #fff;
@@ -478,83 +485,83 @@ hr {
   z-index: 9999;
 }
 
-/* line 173, main.scss */
+/* line 179, main.scss */
 #titles {
   opacity: 0;
 }
 
-/* line 177, main.scss */
+/* line 183, main.scss */
 .titles-animate {
   transition: opacity 1s ease-in;
   opacity: 1 !important;
 }
 
-/* line 182, main.scss */
+/* line 188, main.scss */
 .nav-title {
   color: #fff;
   position: absolute;
   margin-left: 50%;
 }
 
-/* line 188, main.scss */
+/* line 194, main.scss */
 #nav-title1 {
   top: 140px;
 }
 
-/* line 192, main.scss */
+/* line 198, main.scss */
 #nav-title2 {
   top: 210px;
 }
 
-/* line 196, main.scss */
+/* line 202, main.scss */
 .nav-title > h1,
 .nav-title > h2,
 .nav-title > h3 {
   margin-left: -50%;
 }
 
-/* line 202, main.scss */
+/* line 208, main.scss */
 .sticky-title1 {
   top: -12px !important;
   position: fixed;
   z-index: 9999;
 }
 
-/* line 208, main.scss */
+/* line 214, main.scss */
 .sticky-title2 {
   top: 55px !important;
   position: fixed;
   z-index: 9999;
 }
 
-/* line 214, main.scss */
+/* line 220, main.scss */
 .navbar-toggle {
   background-color: white;
 }
 
-/* line 218, main.scss */
+/* line 224, main.scss */
 .icon-bar {
   background-color: black;
 }
 
-/* line 222, main.scss */
+/* line 228, main.scss */
 .foot-wrapper {
   margin-left: 50%;
 }
 
-/* line 226, main.scss */
+/* line 232, main.scss */
 .navbar-footer {
   margin-left: -37%;
 }
 
-/* line 231, main.scss */
+/* line 237, main.scss */
 .me {
   font-size: 17px;
   text-align: center;
   padding-top: 10px;
 }
 
-/* line 237, main.scss */
+/* line 243, main.scss */
 .footer-brand {
   position: relative !important;
   top: 0;
@@ -565,25 +572,25 @@ hr {
   vertical-align: middle;
 }
 
-/* line 248, main.scss */
+/* line 254, main.scss */
 .copyright {
   clear: both;
   text-align: center;
   padding-top: 14px;
 }
 
-/* line 254, main.scss */
+/* line 260, main.scss */
 .social-icons {
   text-align: center;
 }
-/* line 256, main.scss */
+/* line 262, main.scss */
 .social-icons img {
   width: 25px;
   height: 25px;
   margin: 25px;
 }
 
-/* line 263, main.scss */
+/* line 269, main.scss */
 .pointer {
   cursor: pointer;
 }

@@ -2,26 +2,30 @@ define(['angular'], function (angular) {
 	'use strict';
 
 	angular.module('mywebsiteApp.services.Settings', [])
-		.factory('Settings', function () {
+		.factory('Settings', function ($timeout) {
 
 			return {
-				stickyNavMenu: function () {
-					// $(window).on('scroll', function () {
-		   //              if ($(this).scrollTop() > 155) {
-		   //                  $('#nav-title1').addClass('sticky-title1');
-		   //                  $('#nav-title2').addClass('sticky-title2');
-		   //              } else {
-		   //                  $('#nav-title1').removeClass('sticky-title1');
-		   //                  $('#nav-title2').removeClass('sticky-title2');
-		   //              }
-		   //              if ($(this).scrollTop() > 366) {
-		   //                  $('.header-wrapper').addClass('sticky-navbar');
-		   //                  $('#nav-title2').removeClass('sticky-title2');
-		   //              } else {
-		   //                  $('.header-wrapper').removeClass('sticky-navbar');
+				customizeHeader: function (title, info, pageName, pageClass) {
+					// Hide canvas element outside home
+		            $('#canv').css('display', 'none');    
 
-		   //              }
-     //        		});
+		            // Activate selected page header 
+		            $('.nav').find('a').removeClass('active');
+		            $('.'+pageName).children('a').addClass('active');     
+
+		            // Add specific data to nav area
+		            $('#nav-title1').find('em').text(title);
+		            $('#nav-title2').find('h2').text(info);
+		            $('#titles').removeClass('titles-animate');
+		            $timeout(function () {
+		                $('#titles').addClass('titles-animate');
+		            });
+
+		            // Custom nav header background
+		            $('.navbar').removeClass(function () {
+		                return $(this).attr('class');
+		            });
+		            $('#navbar').addClass('navbar custom-navbar ' + pageClass);
 				}
 			};
 		});

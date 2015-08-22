@@ -10,34 +10,19 @@ define(['angular'], function (angular) {
      * Controller of the mywebsiteApp
      */
     angular.module('mywebsiteApp.controllers.ProjectsCtrl', [])
-        .controller('ProjectsCtrl', function ($scope, $timeout) {
+        .controller('ProjectsCtrl', function ($scope, $timeout, Settings) {
 
             /*** DEFAULTS ***/
 
             $scope.title = 'Projects';
             $scope.info = 'Work and Personal Stuff I\'ve worked on';
+            var pageName = 'projects';
+            var pageClass = 'projects-background';
+
 
             /*** INITIALIZE ***/
 
-            // Hide canvas element outside home
-            $('#canv').css('display', 'none');    
-
-            // Activate selected page header 
-            $('.nav').find('a').removeClass('active');
-            $('.projects').children('a').addClass('active');     
-
-            // Add specific data to nav area
-            $('#nav-title1').find('em').text($scope.title);
-            $('#nav-title2').find('h2').text($scope.info);
-            $('#titles').removeClass('titles-animate');
-            $timeout(function () {
-                $('#titles').addClass('titles-animate');
-            });
-
-            // Custom nav header background
-            $('.navbar').removeClass(function () {
-                return $(this).attr('class');
-            });
-            $('#navbar').addClass('navbar custom-navbar projects-background');
+            // update based on current page
+            Settings.customizeHeader($scope.title, $scope.info, pageName, pageClass);
         });
 });

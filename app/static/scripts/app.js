@@ -1,4 +1,4 @@
-define(['angular', 'controllers/main', 'directives/main'], function (angular) {
+define(['angular', 'controllers/main', 'directives/main', 'services/main'], function (angular) {
 
     'use strict';
 
@@ -13,6 +13,7 @@ define(['angular', 'controllers/main', 'directives/main'], function (angular) {
     return angular.module('mywebsiteApp', [
             'mywebsiteApp.controllers',
             'mywebsiteApp.directives',
+            'mywebsiteApp.services',
             'ngAnimate',
             'ngAria',
             'ngCookies',
@@ -54,6 +55,8 @@ define(['angular', 'controllers/main', 'directives/main'], function (angular) {
                 });
         })
         .run(function () {
+
+            // Stickify and animate nav headers
             $(window).on('scroll', function () {
                 if ($(this).scrollTop() > 155) {
                     $('#nav-title1').addClass('sticky-title1');
