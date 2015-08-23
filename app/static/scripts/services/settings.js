@@ -26,6 +26,34 @@ define(['angular'], function (angular) {
 		                return $(this).attr('class');
 		            });
 		            $('#navbar').addClass('navbar custom-navbar ' + pageClass);
+				},
+				getProjectLinks: function () {
+
+					return {
+						newSite: {
+			                link: 'home',
+			                github: 'https://github.com/alouiseq/my-angular-website'
+		            	},
+			            todos: {
+			                link: 'https://my-website-express.herokuapp.com/todos',
+			                github: 'https://github.com/alouiseq/to-dos'
+			            },
+			            oldSite: {
+			                link: 'https://my-website-express.herokuapp.com',
+			                github: 'https://github.com/alouiseq/my-ko-node-website'
+			            },
+			            vacationCharts: {
+			                link: 'sandbox',
+			                github: 'https://github.com/alouiseq/pie-chart-n-slices'
+			            },
+			            connectFour: {
+			                link: 'sandbox',
+			                github: ''
+			            },
+			            spaceDuelGame: {
+			                github: 'https://github.com/alouiseq/space-duel'
+			            }
+			        };
 				}
 			};
 		});

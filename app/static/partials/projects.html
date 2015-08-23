@@ -1,16 +1,123 @@
 <div id="projects">
-    <p class="title">STAY TUNED FOR MORE PROJECTS...</p>
-
-    <article id="todos" class="project">
+    <article id="new-site" class="project">
         <span class="snapshot">
-            <img src="images/todosKO.png" width="45%" />
+            <a ui-sref="{{projects.newSite.link}}" target="_blank">
+                <img src="images/new-site.png" width="100%" />
+            </a>
         </span>
         <div class="desc">
+            <div class="title">
+                Personal Website.
+                <span class="sub-title"><a ui-sref="{{projects.newSite.link}}" target="_blank">Try Me</a></span>
+            </div>            
             <p class="detail">
-                A simple to dos application with full CRUD (create, read, update, delete) capability. It also features a drop and drag mechanism. Views are split into two: daily tasks and project tasks. Another feature is added (not complete) similar to a game leveling system where points increase in a given category based on matching texts. This provides a simple but great way to motivate oneself to complete their tasks.
+                A personal website redesigned with an AngularJS framework. Also added HTML5 and CSS3 functionalities. Animated page headers via Canvas.
+                <span class="github-link"><a href="{{projects.newSite.github}}" target="_blank">Fork me</a></span>
             </p>
             <div class="tools">
-                Tools: Knockout.js, HTML, CSS, jQuery, node.js, MongoDB
+                Tools: AngularJS, Require.js, HTML5, Canvas, CSS3, jQuery, Grunt, Bower, Yeoman, Python, Flask, Gunicorn
+            </div>
+        </div>
+    </article>
+    <hr />
+    <article id="vacation-charts" class="project">
+        <span class="snapshot">
+            <a ui-sref="{{projects.vacationCharts.link}}" target="_blank">
+                <img src="images/vacationCharts.png" width="100%" />
+            </a>
+        </span>
+        <div class="desc">
+            <div class="title">
+                Vacation Charts.
+                <span class="sub-title"><a ui-sref="{{projects.vacationCharts.link}}" target="_blank">Try Me</a></span>
+            </div>            
+            <p class="detail">
+                Data visualization of vacations my family have traveled over the years represented by pie charts. Chart slices represent vacation locations. A CRUD single page application (SPA) that is powered by an AngularJS front-end and a Flask Rest API.
+                <span class="github-link"><a href="{{projects.vacationCharts.github}}" target="_blank">Fork me</a></span>
+            </p>
+            <div class="tools">
+                Tools: AngularJS, Require.js, HTML5, CSS3, jQuery, Lodash, Grunt, Bower, Yeoman, Python, Flask, Gunicorn
+            </div>
+        </div>
+    </article>
+    <hr>
+    <article id="connect-four" class="project">
+        <span class="snapshot">
+            <a ui-sref="{{projects.connectFour.link}}" target="_blank">
+                <img src="images/connectFour.png" width="100%" />
+            </a>
+        </span>
+        <div class="desc">
+            <div class="title">
+                Connect Four implementation.
+                <span class="sub-title"><a ui-sref="{{projects.connectFour.link}}" target="_blank">Try Me</a></span>
+            </div>            
+            <p class="detail">
+                My connect four game implementation in Javascript and jQuery.
+                <span class="github-link"><a href="{{projects.connectFour.github}}" target="_blank">Fork me</a></span>
+            </p>
+            <div class="tools">
+                Tools: Javascript, jQuery
+            </div>
+        </div>
+    </article>
+    <hr />
+    <article id="todos" class="project">
+        <span class="snapshot">
+            <a href="{{projects.todos.link}}" target="_blank">
+                <img src="images/todosKO.png" width="100%" />
+            </a>
+        </span>
+        <div class="desc">
+            <div class="title">
+                Simple To Dos.
+                <span class="sub-title"><a href="{{projects.todos.link}}" target="_blank">Try Me</a></span>
+            </div>     
+            <p class="detail">
+                A simple to dos application with full CRUD (create, read, update, delete) capability. It also features a drop and drag mechanism. Views are split into two: daily tasks and project tasks. Another feature is added (not complete) similar to a game leveling system where points increase in a given category based on matching texts. This provides a simple but great way to motivate oneself to complete their tasks.
+                <span class="github-link"><a href="{{projects.todos.github}}" target="_blank">Fork me</a></span>
+            </p>
+            <div class="tools">
+                Tools: Knockout.js, HTML, CSS, jQuery, Grunt, Bower, Yeoman, Node.js, Express.js, MongoDB, Mongoskin, Require.js
+            </div>
+        </div>
+    </article>
+    <hr>
+    <article id="old-site" class="project">
+        <span class="snapshot">
+            <a href="{{projects.oldSite.link}}" target="_blank">
+                <img src="images/old-site.png" width="100%" />
+            </a>
+        </span>
+        <div class="desc">
+            <div class="title">
+                Old personal website.
+                <span class="sub-title"><a href="{{projects.oldSite.link}}" target="_blank">Try Me</a></span>
+            </div>  
+            <p class="detail">
+                A personal website that provides informational data encompassing my resume, projects, blog, and a mini project sandbox.
+                <span class="github-link"><a href="{{projects.oldSite.github}}" target="_blank">Fork me</a></span>
+            </p>
+            <div class="tools">
+                Tools: Knockout.js, HTML, Jade, CSS, jQuery, Grunt, Bower, Yeoman, Node.js, Express.js
+            </div>
+        </div>
+    </article>
+    <hr />
+    <article id="space-duel-game" class="project">
+        <span class="snapshot">
+            <img src="images/space-duel.png" width="100%" />
+        </span>
+        <div class="desc">
+            <div class="title">
+                Space Duel Game                
+            </div>  
+            <p class="detail">
+                2D two player battle game (either Player vs. CPU or Player vs. Player). A player wins the game if the opponent's health reaches zero either by being hit by a variety of weapons in which the health bar decreases or falls off the platform. Controls are done via the keyboard.
+                <span class="github-link"><a href="{{projects.spaceDuelGame.github}}" target="_blank">Fork me</a></span>
+            </p>
+            <div class="tools">
+                Tools: Knockout.js, HTML, Jade, CSS, jQuery, Grunt, Bower, Yeoman, Node.js, Express.js
             </div>
         </div>
     </article>

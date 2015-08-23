@@ -96,21 +96,115 @@
   background-color: lightsalmon;
 }
 
-/* line 2, _projects.scss */
+/* line 11, _projects.scss */
 #projects .title {
   text-align: center;
 }
+/* line 14, _projects.scss */
+#projects .title .sub-title {
+  font-size: 20px;
+  margin-left: 20px;
+}
 /* line 6, _projects.scss */
+#projects .title .sub-title a:hover {
+  text-decoration: none;
+}
+/* line 20, _projects.scss */
+#projects .detail .github-link {
+  font-size: 20px;
+  margin-left: 20px;
+}
+/* line 6, _projects.scss */
+#projects .detail .github-link a:hover {
+  text-decoration: none;
+}
+/* line 25, _projects.scss */
+#projects .project {
+  height: 400px;
+}
+/* line 29, _projects.scss */
 #projects .snapshot {
   position: relative;
-  left: 0;
-}
-/* line 11, _projects.scss */
-#projects .desc {
-  position: relative;
-  right: 0;
   display: inline-block;
   width: 45%;
+  left: 0;
+}
+/* line 36, _projects.scss */
+#projects .snapshot:hover {
+  border: 1px solid blue;
+}
+/* line 41, _projects.scss */
+#projects #new-site {
+  height: 325px;
+}
+/* line 44, _projects.scss */
+#projects #new-site .snapshot {
+  top: 0;
+}
+/* line 47, _projects.scss */
+#projects #new-site .desc {
+  top: 60px;
+}
+/* line 53, _projects.scss */
+#projects #vacation-charts .snapshot {
+  top: 15px;
+}
+/* line 56, _projects.scss */
+#projects #vacation-charts .desc {
+  top: 75px;
+}
+/* line 62, _projects.scss */
+#projects #connectFour .snapshot {
+  top: 15px;
+}
+/* line 65, _projects.scss */
+#projects #connectFour .desc {
+  top: 75px;
+}
+/* line 71, _projects.scss */
+#projects #todos .snapshot {
+  top: -120px;
+}
+/* line 74, _projects.scss */
+#projects #todos .desc {
+  top: 35px;
+}
+/* line 80, _projects.scss */
+#projects #old-site .snapshot {
+  top: 15px;
+}
+/* line 83, _projects.scss */
+#projects #old-site .desc {
+  top: 75px;
+}
+/* line 88, _projects.scss */
+#projects #space-duel-game {
+  margin-bottom: 100px;
+}
+/* line 91, _projects.scss */
+#projects #space-duel-game .snapshot {
+  text-align: center;
+  top: -60px;
+}
+/* line 95, _projects.scss */
+#projects #space-duel-game .snapshot img {
+  width: 80%;
+}
+/* line 99, _projects.scss */
+#projects #space-duel-game .desc {
+  top: 75px;
+}
+/* line 104, _projects.scss */
+#projects .desc {
+  position: relative;
+  right: -95px;
+  display: inline-block;
+  width: 45%;
+}
+/* line 112, _projects.scss */
+#projects .tools {
+  color: red;
+  font-size: 18px;
 }
 
 /* line 3, _resume.scss */

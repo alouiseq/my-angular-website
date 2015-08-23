@@ -1,18 +1,116 @@
 #projects {
+    @mixin link-settings {
+        font-size: 20px;
+        margin-left: 20px;
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
     .title {
         text-align: center;
+
+        .sub-title {
+            @include link-settings;
+        }        
+    }
+
+    .detail {
+        .github-link {
+            @include link-settings;
+        }
+    }
+
+    .project {
+        height: 400px;
     }
 
     .snapshot {
         position: relative;
-        left: 0;
+        display: inline-block;
+        width: 45%;
+        left: 0;        
+    }
+
+    .snapshot:hover {
+        border: 1px solid blue;
+    }
+
+    // projects
+    #new-site {
+        height: 325px;
+
+        .snapshot {
+            top: 0;
+        }
+        .desc {
+            top: 60px;
+        }
+    }
+
+    #vacation-charts {
+        .snapshot {
+            top: 15px;
+        }
+        .desc {
+            top: 75px;
+        }
+    }
+
+    #connectFour {
+        .snapshot {
+            top: 15px;
+        }
+        .desc {
+            top: 75px;
+        }
+    }
+
+    #todos {
+        .snapshot {
+            top: -120px;
+        }
+        .desc {
+            top: 35px;
+        }
+    }
+
+    #old-site {
+        .snapshot {
+            top: 15px;
+        }
+        .desc {
+            top: 75px;
+        }
+    }
+
+    #space-duel-game {
+        margin-bottom: 100px;
+
+        .snapshot {
+            text-align: center;            
+            top: -60px;
+
+            img {
+                width: 80%;
+            }
+        }
+        .desc {
+            top: 75px;
+        }
     }
 
     .desc {
         position: relative;
-        right: 0;
+        right: -95px;
         display: inline-block;
         width: 45%;
 
+    }
+
+    .tools {
+        color: red;
+        font-size: 18px;
     }
 }
