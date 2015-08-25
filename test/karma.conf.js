@@ -37,6 +37,7 @@ module.exports = function(config) {
       'app/static/bower_components/underscore/underscore.js',
       'app/static/bower_components/lodash/lodash.js',
       'app/static/bower_components/requirejs/require.js',
+      'app/static/bower_components/text/text.js',
       'app/static/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

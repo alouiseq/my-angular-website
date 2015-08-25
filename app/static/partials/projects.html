@@ -43,14 +43,14 @@
     <hr>
     <article id="connect-four" class="project">
         <span class="snapshot">
-            <a ui-sref="{{projects.connectFour.link}}" target="_blank">
+            <a class="pointer" ui-sref="{{projects.connectFour.link}}" target="_blank" data-toggle="modal" data-target="#connect-four-modal">
                 <img src="images/connectFour.png" width="100%" />
             </a>
         </span>
         <div class="desc">
             <div class="title">
-                Connect Four implementation.
-                <span class="sub-title"><a ui-sref="{{projects.connectFour.link}}" target="_blank">Try Me</a></span>
+                Connect Four.
+                <span class="sub-title pointer"><a ui-sref="{{projects.connectFour.link}}" target="_blank" data-toggle="modal" data-target="#connect-four-modal">Try Me</a></span>
             </div>            
             <p class="detail">
                 My connect four game implementation in Javascript and jQuery.
@@ -61,6 +61,19 @@
             </div>
         </div>
     </article>
+    <div id="connect-four-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h4 class="modal-title">My Connect Four Implementation</h4>
+                </div>
+                <div class="modal-body">
+                    <connect-four></connect-four>       
+                </div>
+            </div>
+        </div>
+    </div>
     <hr />
     <article id="todos" class="project">
         <span class="snapshot">

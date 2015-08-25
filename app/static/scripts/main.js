@@ -14,7 +14,10 @@ require.config({
         'ui.router': '/bower_components/angular-ui-router/release/angular-ui-router',
         'jquery': '/bower_components/jquery/dist/jquery',
         'underscore': '/bower_components/underscore/underscore',
-        'lodash': '/bower_components/lodash/lodash'
+        'lodash': '/bower_components/lodash/lodash',
+        'text': '/bower_components/text/text',
+        'connectFour': '/bower_components/connectFour/src/connectFour',
+        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap'
 	},
 	shim: {
 		'angular': {
@@ -29,7 +32,8 @@ require.config({
         'ngRoute': ['angular'],
         'ngSanitize': ['angular'],
         'ngTouch': ['angular'],
-        'ui.router': ['angular']
+        'ui.router': ['angular'],
+        'bootstrap': ['jquery']
 	}
 });
 
@@ -49,7 +53,9 @@ require([
     'ngTouch',
     'ui.router',
 	'lodash',
-	'underscore'
+	'underscore',
+    'text',
+    'bootstrap'
 ], function (angular, app) {
 	'use strict';
 

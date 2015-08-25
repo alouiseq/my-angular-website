@@ -1,0 +1,28 @@
+#connectFour .redarrow, .rsz_1yellow-arrow, .red-chip3, .yellow-chip{
+	background: url(bower_components/connectFour/src/sprites.png) no-repeat;
+}
+
+#connectFour .redarrow{
+	background-position: -12px -176px ;
+	width: 100px;
+	height: 100px;
+}
+
+#connectFour .rsz_1yellow-arrow{
+	background-position: -163px -172px ;
+	width: 90px;
+	height: 101px;
+}
+
+#connectFour .red-chip3{
+	background-position: 0 0;
+	width: 130px;
+	height: 130px;
+}
+
+#connectFour .yellow-chip{
+	background-position: -141px -4px ;
+	width: 124px;
+	height: 124px;
+}
+

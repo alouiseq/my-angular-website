@@ -45,7 +45,7 @@
             top: 0;
         }
         .desc {
-            top: 60px;
+            top: 96px;
         }
     }
 
@@ -58,7 +58,9 @@
         }
     }
 
-    #connectFour {
+    #connect-four {
+        height: 530px;
+
         .snapshot {
             top: 15px;
         }
@@ -68,11 +70,13 @@
     }
 
     #todos {
+        height: 460px;
+
         .snapshot {
             top: -120px;
         }
         .desc {
-            top: 35px;
+            top: 58px;
         }
     }
 

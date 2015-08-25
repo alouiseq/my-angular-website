@@ -143,7 +143,7 @@
 }
 /* line 47, _projects.scss */
 #projects #new-site .desc {
-  top: 60px;
+  top: 96px;
 }
 /* line 53, _projects.scss */
 #projects #vacation-charts .snapshot {
@@ -153,55 +153,63 @@
 #projects #vacation-charts .desc {
   top: 75px;
 }
-/* line 62, _projects.scss */
-#projects #connectFour .snapshot {
+/* line 61, _projects.scss */
+#projects #connect-four {
+  height: 530px;
+}
+/* line 64, _projects.scss */
+#projects #connect-four .snapshot {
   top: 15px;
 }
-/* line 65, _projects.scss */
-#projects #connectFour .desc {
+/* line 67, _projects.scss */
+#projects #connect-four .desc {
   top: 75px;
 }
-/* line 71, _projects.scss */
+/* line 72, _projects.scss */
+#projects #todos {
+  height: 460px;
+}
+/* line 75, _projects.scss */
 #projects #todos .snapshot {
   top: -120px;
 }
-/* line 74, _projects.scss */
+/* line 78, _projects.scss */
 #projects #todos .desc {
-  top: 35px;
+  top: 58px;
 }
-/* line 80, _projects.scss */
+/* line 84, _projects.scss */
 #projects #old-site .snapshot {
   top: 15px;
 }
-/* line 83, _projects.scss */
+/* line 87, _projects.scss */
 #projects #old-site .desc {
   top: 75px;
 }
-/* line 88, _projects.scss */
+/* line 92, _projects.scss */
 #projects #space-duel-game {
   margin-bottom: 100px;
 }
-/* line 91, _projects.scss */
+/* line 95, _projects.scss */
 #projects #space-duel-game .snapshot {
   text-align: center;
   top: -60px;
 }
-/* line 95, _projects.scss */
+/* line 99, _projects.scss */
 #projects #space-duel-game .snapshot img {
   width: 80%;
 }
-/* line 99, _projects.scss */
+/* line 103, _projects.scss */
 #projects #space-duel-game .desc {
   top: 75px;
 }
-/* line 104, _projects.scss */
+/* line 108, _projects.scss */
 #projects .desc {
   position: relative;
   right: -95px;
   display: inline-block;
   width: 45%;
 }
-/* line 112, _projects.scss */
+/* line 116, _projects.scss */
 #projects .tools {
   color: red;
   font-size: 18px;

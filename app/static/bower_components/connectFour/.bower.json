@@ -1,0 +1,13 @@
+{
+  "name": "connectFour",
+  "homepage": "https://github.com/alouiseq/connectFour",
+  "_release": "a79fbd3095",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a79fbd3095064f38ed742e4fab48571db9725ace"
+  },
+  "_source": "https://github.com/alouiseq/connectFour.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/alouiseq/connectFour.git"
+}

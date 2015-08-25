@@ -1,0 +1,187 @@
+#connectFour {
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+#connectFour h1 {
+    text-align: center;
+}
+
+#connectFour .restart {
+        margin-left: 747px;
+}
+
+#connectFour .prompt {
+    text-align: center;
+}
+
+#connectFour .select {
+    color: blue;
+}
+
+#connectFour input[type='button'] {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+}
+
+#connectFour .yellow, .start {
+    margin-left: 50px;
+}
+
+#connectFour .start {
+    color: red;
+}
+
+#connectFour #board {
+    margin: 0 auto;
+    width: 714px;
+    height: 612px;
+    border: 2px solid black;
+    background-color: blue;
+}
+
+#connectFour .tile {
+    float: left;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+#connectFour .arrows, .chips {
+    width: 130px;
+    height: 130px;
+    top: 15px;
+    position: relative;
+}
+
+#connectFour .arrows {
+    left: 85px;
+}
+
+#connectFour .chips {
+    left: 81px;
+}
+
+#connectFour #red-arrow {
+    background: url(bower_components/connectFour/src/sprites.png) -3px -149px;
+}
+
+#connectFour #yellow-arrow {
+    background: url(bower_components/connectFour/src/sprites.png) -146px -156px;
+}
+
+/*** MOVE ARROWS ***/
+#connectFour .move1 {
+    left: 85px;
+}
+
+#connectFour .move2 {
+    left: 188px;
+}
+
+#connectFour .move3 {
+    left: 291px;
+}
+
+#connectFour .move4 {
+    left: 392px;
+}
+
+#connectFour .move5 {
+    left: 493px;
+}
+
+#connectFour .move6 {
+    left: 594px;
+}
+
+#connectFour .move7 {
+    left: 697px;
+}
+/*** END MOVE ARROWS ***/
+
+#connectFour #red-chip {
+    background: url(bower_components/connectFour/src/sprites.png) 0 0;
+}
+
+#connectFour #yellow-chip {
+    background: url(bower_components/connectFour/src/sprites.png) -138px -4px;
+/*  -webkit-animation-duration: 3s;
+    -webkit-animation-fill-mode: forwards; */
+}
+
+#connectFour .winChips {
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: pulsate;
+}
+
+/*** WINNING CHIPS ***/
+@-webkit-keyframes pulsate {
+    0% {
+        background-color: white;
+    }
+    50% {
+        background-image: none;
+        background-color: red;
+    }
+    100% {
+        background-color: white;
+    }
+}
+/*** END WINNINGS ***/
+
+/*** CHIP ANIMATION ***/
+@-webkit-keyframes down1 {
+    from {
+        top: 15px;
+    }
+    to {
+        top: 121px;
+    }
+}
+@-webkit-keyframes down2 {
+    from {
+        top: 15px;
+    }
+    to {
+        top: 223px;
+    }
+}
+@-webkit-keyframes down3 {
+    from {
+        top: 15px;
+    }
+    to {
+        top: 325px;
+    }
+}
+@-webkit-keyframes down4 {
+    from {
+        top: 15px;
+    }
+    to {
+        top: 427px;
+    }
+}
+@-webkit-keyframes down5 {
+    from {
+        top: 15px;
+    }
+    to {
+        top: 529px;
+    }
+}
+@-webkit-keyframes down6 {
+    from {
+        top: 15px;
+    }
+    to {
+        top: 631px;
+    }
+}
+/*** CHIP ANIMATION END ***/

@@ -1,4 +1,4 @@
-define(['angular'], function (angular) {
+define(['angular', 'connectFour'], function (angular) {
 
     'use strict';
 
@@ -9,13 +9,15 @@ define(['angular'], function (angular) {
      * # HomeCtrl
      * Controller of the mywebsiteApp
      */
-    angular.module('mywebsiteApp.controllers.ProjectsCtrl', [])
+    angular.module('mywebsiteApp.controllers.ProjectsCtrl', [
+            'connectFourApp.directives.connectFour'
+        ])
         .controller('ProjectsCtrl', function ($scope, $timeout, Settings) {
 
             /*** DEFAULTS ***/
 
             $scope.title = 'Projects';
-            $scope.info = 'Work and Personal Stuff I\'ve worked on';
+            $scope.info = 'Personal / Home Efforts';
             var pageName = 'projects';
             var pageClass = 'projects-background';           
 
