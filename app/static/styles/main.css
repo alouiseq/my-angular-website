@@ -51,7 +51,7 @@
 }
 /* line 63, _home.scss */
 #home .projects-list #site .meta {
-  margin: 40px 10px 10px 10px;
+  margin: 17px 10px 10px 10px;
 }
 /* line 67, _home.scss */
 #home .projects-list #site:hover {
@@ -60,37 +60,37 @@
   background-color: bisque;
 }
 /* line 72, _home.scss */
-#home .projects-list #todo {
-  background-image: url("/images/todosKO.png");
+#home .projects-list #vacation-charts {
+  background-image: url("/images/vacationCharts.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 999;
 }
 /* line 76, _home.scss */
-#home .projects-list #todo .meta {
-  margin: 40px 10px 10px 10px;
+#home .projects-list #vacation-charts .meta {
+  margin: 14px 10px 10px 10px;
 }
 /* line 80, _home.scss */
-#home .projects-list #todo:hover {
+#home .projects-list #vacation-charts:hover {
   transition: all 1s ease-in;
   background-image: none;
   background-color: burlywood;
 }
 /* line 85, _home.scss */
-#home .projects-list #space-duel {
-  background-image: url("/images/space-duel.png");
+#home .projects-list #connect-four {
+  background-image: url("/images/connectFour.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 999;
 }
 /* line 89, _home.scss */
-#home .projects-list #space-duel .meta {
+#home .projects-list #connect-four .meta {
   margin: 40px 10px 10px 10px;
 }
 /* line 93, _home.scss */
-#home .projects-list #space-duel:hover {
+#home .projects-list #connect-four:hover {
   transition: all 1s ease-in;
   background-image: none;
   background-color: lightsalmon;

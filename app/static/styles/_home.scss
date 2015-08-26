@@ -51,8 +51,8 @@
 		z-index: 999;
 	}
 
-	@mixin marginDefault {
-		margin: 40px 10px 10px 10px;
+	@mixin marginDefault($top) {
+		margin: $top 10px 10px 10px;
 	}
 
 	.projects-list {
@@ -61,7 +61,7 @@
 			background-size: 186%;
 			@include imageDefault;
 			.meta {	
-				@include marginDefault;		
+				@include marginDefault(17px);		
 			}			
 		}		
 		#site:hover {
@@ -69,28 +69,28 @@
 			background-image: none;
 			background-color: bisque;
 		}		
-		#todo {
-			background-image: url("/images/todosKO.png"); 
+		#vacation-charts {
+			background-image: url("/images/vacationCharts.png"); 
 			background-size: 100%;
 			@include imageDefault;
 			.meta {	
-				@include marginDefault;		
+				@include marginDefault(14px);		
 			}				
 		}
-		#todo:hover {
+		#vacation-charts:hover {
 			transition: all 1s ease-in;
 			background-image: none;
 			background-color: burlywood;
 		}
-		#space-duel {
-			background-image: url("/images/space-duel.png"); 
+		#connect-four {
+			background-image: url("/images/connectFour.png"); 
 			background-size: 100%;
 			@include imageDefault;
 			.meta {	
-				@include marginDefault;		
+				@include marginDefault(40px);		
 			}	
 		}
-		#space-duel:hover {
+		#connect-four:hover {
 			transition: all 1s ease-in;
 			background-image: none;
 			background-color: lightsalmon;
