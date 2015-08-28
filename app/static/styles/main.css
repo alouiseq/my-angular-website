@@ -61,7 +61,7 @@
 }
 /* line 72, _home.scss */
 #home .projects-list #vacation-charts {
-  background-image: url("/images/vacationCharts.png");
+  background-image: url("/images/pie-charts.png");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -213,6 +213,11 @@
 #projects .tools {
   color: red;
   font-size: 18px;
+}
+/* line 121, _projects.scss */
+#projects .tech-text {
+  color: green;
+  font-size: 16px;
 }
 
 /* line 3, _resume.scss */
