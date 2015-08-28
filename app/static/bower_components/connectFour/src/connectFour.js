@@ -4,9 +4,9 @@ define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!..
 
     /**
      * @ngdoc function
-     * @name mywebsiteApp.directive:milestonesTimeline
+     * @name mywebsiteApp.directive:connectFour
      * @description
-     * # milestonesTimeline
+     * # connectFour
      * Directive of the mywebsiteApp
      */
 

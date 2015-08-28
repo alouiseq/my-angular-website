@@ -17,7 +17,11 @@ require.config({
         'lodash': '/bower_components/lodash/lodash',
         'text': '/bower_components/text/text',
         'connectFour': '/bower_components/connectFour/src/connectFour',
-        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap'
+        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
+        'ngHighcharts': '/bower_components/highcharts-ng/dist/highcharts-ng',
+        'highcharts': '/bower_components/highcharts/highcharts',
+        'highcharts-more': '/bower_components/highcharts/highcharts-more',
+        'exporting': '/bower_components/highcharts/modules/exporting',
 	},
 	shim: {
 		'angular': {
@@ -33,11 +37,13 @@ require.config({
         'ngSanitize': ['angular'],
         'ngTouch': ['angular'],
         'ui.router': ['angular'],
-        'bootstrap': ['jquery']
+        'bootstrap': ['jquery'],
+        'ngHighcharts': ['highcharts', 'angular'],
+        'highcharts-more': ['highcharts']
 	}
 });
 
-	window.name = 'NG_DEFER_BOOTSTRAP!';
+window.name = 'NG_DEFER_BOOTSTRAP!';
 	
 require([
 	'angular',
@@ -55,7 +61,11 @@ require([
 	'lodash',
 	'underscore',
     'text',
-    'bootstrap'
+    'bootstrap',
+    'ngHighcharts',
+    'highcharts',
+    'highcharts-more',
+    'exporting'
 ], function (angular, app) {
 	'use strict';
 

@@ -17,7 +17,10 @@
     "lodash": "~3.10.1",
     "requirejs": "~2.1.20",
     "connectFour": "https://github.com/alouiseq/connectFour.git",
-    "text": "~2.0.14"
+    "text": "~2.0.14",
+    "vacation-charts": "https://github.com/alouiseq/vacation-charts.git",
+    "highcharts": "~4.1.8",
+    "highcharts-ng": "~0.0.8"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

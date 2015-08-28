@@ -10,7 +10,8 @@ define(['angular', 'connectFour'], function (angular) {
      * Controller of the mywebsiteApp
      */
     angular.module('mywebsiteApp.controllers.ProjectsCtrl', [
-            'connectFourApp.directives.connectFour'
+            'connectFourApp.features',
+            'pieChartsApp.features'
         ])
         .controller('ProjectsCtrl', function ($scope, $timeout, Settings) {
 

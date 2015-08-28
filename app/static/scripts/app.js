@@ -22,7 +22,8 @@ define(['angular', 'controllers/main', 'directives/main', 'services/main'], func
             'ngRoute',
             'ngSanitize',
             'ngTouch',
-            'ui.router'
+            'ui.router',
+            'ngHighcharts'
         ])
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');

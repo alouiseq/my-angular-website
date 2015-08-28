@@ -1,0 +1,13 @@
+{
+  "name": "vacation-charts",
+  "homepage": "https://github.com/alouiseq/vacation-charts",
+  "_release": "33a162a8c2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "33a162a8c2623306e7672cc579485dfbbc254ce1"
+  },
+  "_source": "https://github.com/alouiseq/vacation-charts.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/alouiseq/vacation-charts.git"
+}
