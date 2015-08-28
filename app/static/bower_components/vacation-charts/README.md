@@ -7,6 +7,7 @@ Pie Charts specific to vacation trips and expenses
 # flask - Flask, request, jsonify, make_response
 # highcharts-ng.js
 # highcharts.js
+# highcharts adapters standalone-framework.js
 # highcharts-more.js
 # exporting.js
 # underscore.js

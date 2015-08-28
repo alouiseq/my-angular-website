@@ -23,8 +23,12 @@ define(['angular', 'controllers/main', 'directives/main', 'services/main'], func
             'ngSanitize',
             'ngTouch',
             'ui.router',
-            'ngHighcharts'
+            // 'ngHighcharts'
         ])
+        .constant('urls', {
+            'baseUrl': 'http://localhost:5000',
+            'pieChartsAPI': '/vacationChart/api/v1.0'
+        })
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
 

@@ -4,10 +4,10 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
 
     /**
      * @ngdoc function
-     * @name pieChartsApp.controller:MainCtrl
+     * @name pieChartsApp.directive:MainCtrl
      * @description
-     * # MainCtrl
-     * Controller of the pieChartsApp
+     * # pieCharts
+     * Directive of the pieChartsApp
      */
     angular.module('pieChartsApp.directives.pieCharts', [])
         .directive('pieCharts', function ($http, PieCharts) {
@@ -16,7 +16,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                 restrict: 'EA',
                 template: template,
                 scope: {},
-                link: function (css) {
+                link: function (scope, css) {
                     scope.showCreateForm = false;
                     scope.showError = false;
                     scope.showChartForm = false;
