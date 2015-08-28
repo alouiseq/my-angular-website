@@ -4,37 +4,38 @@ define(['angular'], function (angular) {
 
 	angular.module('pieChartsApp.services.pieCharts', [])
 		.factory('PieCharts', function ($http, urls) {
+			var url = urls.baseUrl + urls.pieChartsAPI;
 			return {
 				createPie: function (newChart) {
-					return $http.post(urls.baseUrl + urls.apiPath + '/createChart', JSON.stringify(newChart)).then(
+					return $http.post(url + '/createChart', JSON.stringify(newChart)).then(
 					    function (data) {
 					        return data.data;				       
 					    }
 					);   
 				},
 				deletePie: function (chartId) {
-					return $http.delete(urls.baseUrl + urls.apiPath + '/deleteChart/' + chartId).then(
+					return $http.delete(url + '/deleteChart/' + chartId).then(
 						function (data) {
 							return data.status;
 						}
 					);
 				},
 				listPies: function () {
-					return $http.get(urls.baseUrl + urls.apiPath + '/getCharts').then(
+					return $http.get(url + '/getCharts').then(
 						function (data) {
 							return data.data;
 						}
 					);
 				},
 				showPieInfo: function (chartId) {
-					return $http.get(urls.baseUrl + urls.apiPath + '/displayChart/' + chartId).then(
+					return $http.get(url + '/displayChart/' + chartId).then(
 						function (data) {
 							return data.data;
 						}
 					);
 				},
 				updatePie: function (chartId, modifiedChart) {
-					return $http.put(urls.baseUrl + urls.apiPath + '/updateChart/' + chartId, modifiedChart).then(
+					return $http.put(url + '/updateChart/' + chartId, modifiedChart).then(
 						function (data) {
 							return data.status;
 						}
