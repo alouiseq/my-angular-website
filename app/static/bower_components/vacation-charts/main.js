@@ -1,4 +1,4 @@
-define(['./pieCharts', './pieChartsService'], function () {
+define(['anguar', './pieCharts', './pieChartsService'], function (angular) {
     'use strict';
 
     /**

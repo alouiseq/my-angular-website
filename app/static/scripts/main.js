@@ -16,7 +16,7 @@ require.config({
         'underscore': '/bower_components/underscore/underscore',
         'lodash': '/bower_components/lodash/lodash',
         'text': '/bower_components/text/text',
-        'connectFour': '/bower_components/connectFour/src/connectFour',
+        'connectFour': '/bower_components/connectFour/src',
         'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
         'ngHighcharts': '/bower_components/highcharts-ng/dist/highcharts-ng',
         'highcharts': '/bower_components/highcharts/highcharts',
@@ -39,7 +39,8 @@ require.config({
         'ui.router': ['angular'],
         'bootstrap': ['jquery'],
         'ngHighcharts': ['highcharts', 'angular'],
-        'highcharts-more': ['highcharts']
+        'highcharts-more': ['highcharts'],
+        'exporting': ['highcharts']
 	}
 });
 

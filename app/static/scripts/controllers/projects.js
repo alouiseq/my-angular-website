@@ -1,4 +1,4 @@
-define(['angular', 'connectFour'], function (angular) {
+define(['angular', 'connectFour/main'], function (angular) {
 
     'use strict';
 
@@ -11,7 +11,7 @@ define(['angular', 'connectFour'], function (angular) {
      */
     angular.module('mywebsiteApp.controllers.ProjectsCtrl', [
             'connectFourApp.features',
-            'pieChartsApp.features'
+            // 'pieChartsApp.features'
         ])
         .controller('ProjectsCtrl', function ($scope, $timeout, Settings) {
 

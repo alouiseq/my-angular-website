@@ -1,4 +1,4 @@
-define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!../bower_components/connectFour/src/sprites.css'], function (angular, connectFourTemplate, connectFourCss, spritesCss) {
+define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!./sprites.css'], function (angular, connectFourTemplate, connectFourCss, spritesCss) {
 
     'use strict';
 
