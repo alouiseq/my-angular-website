@@ -10,7 +10,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
      * Directive of the pieChartsApp
      */
     angular.module('pieChartsApp.directives.pieCharts', [])
-        .directive('pieCharts', function ($http, PieCharts) {
+        .directive('pieCharts', function ($http, PieCharts, PieSlices) {
 
             return {
                 restrict: 'EA',
@@ -115,7 +115,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     };
 
                     scope.createChart = function () {
-                        PieCharts.createPie(scope.newChart).then(
+                        PieCharts.createChart(scope.newChart).then(
                             function (data) {
                                 var chart = data;                     
                                 scope.showError = false;
@@ -132,7 +132,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     };
 
                     scope.listCharts = function () { 
-                        PieCharts.listPies().then(
+                        PieCharts.listCharts().then(
                             function (data) {
                                 scope.pieCharts = data.charts;
                                 scope.showError = false;
@@ -147,7 +147,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     };
 
                     scope.showChartInfo = function () {
-                        PieCharts.showPieInfo(scope.showChart.id).then(
+                        PieCharts.showChartInfo(scope.showChart.id).then(
                             function (data) {
                                 var chartInfo = data;
                                 scope.showError = false;
@@ -163,7 +163,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     };
 
                     scope.deleteChart = function (chartId) {
-                        PieCharts.deletePie(chartId).then(                
+                        PieCharts.deleteChart(chartId).then(                
                             function (status) {
                                 if (status >= 200 && status < 400) {
                                     scope.showError = false;
@@ -183,7 +183,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     };
 
                     scope.updateChart = function () {
-                        PieCharts.updatePie(scope.showChart.id, scope.newChart).then(
+                        PieCharts.updateChart(scope.showChart.id, scope.newChart).then(
                             function (status) {
                                 if (status >= 200 && status < 400) {
                                     scope.showError = false;

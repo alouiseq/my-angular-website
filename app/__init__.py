@@ -79,9 +79,9 @@ chart_id = 1
 
 
 # Create a new chart
-@app.route('/vacationChart/api/v1.0/createChart', methods=['POST'])
+@app.route('/pieCharting/api/v1.0/createChart', methods=['POST'])
 # @auth.login_required
-def createVacationChart ():
+def createChart ():
     chart = request.json
     chartId = chart_id
     chartId += 1
@@ -106,7 +106,7 @@ def createVacationChart ():
 
 
 # # Add a vacation to an existing chart
-# @app.route('/vacationChart/api/v1.0/addVacation/<chart_id>', methods=['POST'])
+# @app.route('/pieCharting/api/v1.0/addVacation/<chart_id>', methods=['POST'])
 # # @auth.login_required
 # def addVacation (chart_id):
 #     newVacation = request.json
@@ -122,8 +122,8 @@ def createVacationChart ():
 
 
 # Remove chart from list of charts
-@app.route('/vacationChart/api/v1.0/deleteChart/<chart_id>', methods=['DELETE'])
-def deleteVacationChart (chart_id):
+@app.route('/pieCharting/api/v1.0/deleteChart/<chart_id>', methods=['DELETE'])
+def deleteChart (chart_id):
     foundChart = [chart for chart in charts if chart['id'] == int(chart_id)]
 
     if len(foundChart) != 0:
@@ -134,7 +134,7 @@ def deleteVacationChart (chart_id):
 
 
 # # Remove vacation from an existing chart
-# @app.route('/vacationChart/api/v1.0/deleteVacation/<chart_id>', methods=['DELETE'])
+# @app.route('/pieCharting/api/v1.0/deleteVacation/<chart_id>', methods=['DELETE'])
 # def deleteVacation (chart_id):
 #     foundChart = [chart for chart in charts if chart['id'] == int(chart_id)]
 
@@ -146,15 +146,15 @@ def deleteVacationChart (chart_id):
 
 
 # Get all charts
-@app.route('/vacationChart/api/v1.0/getCharts', methods=['GET'])
+@app.route('/pieCharting/api/v1.0/getCharts', methods=['GET'])
 # @auth.login_required
-def getVacationCharts ():
+def getCharts ():
     return jsonify(charts=charts)
 
 
 # Get a chart from the list of charts
-@app.route('/vacationChart/api/v1.0/displayChart/<chart_id>', methods=['GET'])
-def displayVacationChart (chart_id):
+@app.route('/pieCharting/api/v1.0/displayChart/<chart_id>', methods=['GET'])
+def showChart (chart_id):
     foundChart = [chart for chart in charts if chart['id'] == int(chart_id)]
     if len(foundChart) != 0:
         return jsonify(foundChart[0])
@@ -163,8 +163,8 @@ def displayVacationChart (chart_id):
 
 
 # Update an existing chart
-@app.route('/vacationChart/api/v1.0/updateChart/<chart_id>', methods=['PUT'])
-def updateVacationChart (chart_id):
+@app.route('/pieCharting/api/v1.0/updateChart/<chart_id>', methods=['PUT'])
+def updateChart (chart_id):
     updateChart = request.json
     print len(updateChart)
     foundChart = [chart for chart in charts if chart['id'] == int(chart_id)]

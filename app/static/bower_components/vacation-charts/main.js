@@ -1,4 +1,4 @@
-define(['angular', './pieCharts', './pieChartsService'], function (angular) {
+define(['angular', './pieCharts', './pieChartsService', './pieSlicesService'], function (angular) {
     'use strict';
 
     /**
@@ -11,6 +11,7 @@ define(['angular', './pieCharts', './pieChartsService'], function (angular) {
     angular.module('pieChartsApp.features', [
         'pieChartsApp.directives.pieCharts',
         'pieChartsApp.services.pieCharts'
+        'pieChartsApp.services.pieSlices'
     ]);
     
 });

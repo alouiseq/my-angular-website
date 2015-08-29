@@ -26,7 +26,7 @@ define(['angular', 'controllers/main', 'directives/main', 'services/main'], func
         ])
         .value('urls', {
             'baseUrl': '',
-            'pieChartsAPI': '/vacationChart/api/v1.0'
+            'pieChartsAPI': '/pieCharting/api/v1.0'
         })
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');

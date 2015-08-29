@@ -42,7 +42,7 @@ define(['angular'], function (angular) {
 			                link: 'https://my-website-express.herokuapp.com',
 			                github: 'https://github.com/alouiseq/my-ko-node-website'
 			            },
-			            vacationCharts: {
+			            pieCharts: {
 			                link: 'sandbox',
 			                github: 'https://github.com/alouiseq/pie-chart-n-slices'
 			            },

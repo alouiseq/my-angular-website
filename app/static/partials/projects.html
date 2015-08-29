@@ -20,27 +20,40 @@
         </div>
     </article>
     <hr />
-    <article id="vacation-charts" class="project">
+    <article id="pie-charts" class="project">
         <span class="snapshot">
-            <a ui-sref="{{projects.vacationCharts.link}}" target="_blank">
+            <a ui-sref="{{projects.pieCharts.link}}" target="_blank" data-toggle="modal" data-target="#pie-charts-modal">
                 <img src="images/pie-charts.png" width="100%" />
             </a>
         </span>
         <div class="desc">
             <div class="title">
-                Vacation Charts.
-                <span class="sub-title"><a ui-sref="{{projects.vacationCharts.link}}" target="_blank">Try Me</a></span>
+                {{chartType}} Charts.
+                <span class="sub-title"><a ui-sref="{{projects.pieCharts.link}}" target="_blank" data-toggle="modal" data-target="#pie-charts-modal">Try Me</a></span>
             </div>            
             <p class="detail">
-                * Currently developing * Data visualization of data (currently vacations but will provide other data options soon) represented by pie charts. A CRUD single page application (SPA) that is powered by an AngularJS front-end and a Flask Rest API.
-                <span class="github-link"><a href="{{projects.vacationCharts.github}}" target="_blank">Fork me</a></span>
+                * Currently developing * Data visualization of data (currently vacations but will provide other data type options soon) represented by pie charts. A CRUD single page application (SPA) that is powered by an AngularJS front-end and a Flask Rest API.
+                <span class="github-link"><a href="{{projects.pieCharts.github}}" target="_blank">Fork me</a></span>
             </p>
             <div class="tools">
                 <span class="tech-text">Technology:</span> Javascript, AngularJS, Require.js, HTML5, CSS3, jQuery, Underscore.js, Lodash, Grunt, Python, Flask
             </div>
             <!-- <pie-charts></pie-charts> -->
-        </div>
+        </div>   
     </article>
+    <div id="pie-charts-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+                    <h4 class="modal-title">{{chartType}} Charts</h4>
+                </div>
+                <div class="modal-body">
+                    <pie-charts></pie-charts>       
+                </div>
+            </div>
+        </div>
+    </div>
     <hr>
     <article id="connect-four" class="project">
         <span class="snapshot">
