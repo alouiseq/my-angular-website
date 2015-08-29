@@ -145,76 +145,80 @@
 #projects #new-site .desc {
   top: 96px;
 }
-/* line 53, _projects.scss */
-#projects #vacation-charts .snapshot {
-  top: 15px;
+/* line 52, _projects.scss */
+#projects #pie-charting {
+  height: 480px;
 }
-/* line 56, _projects.scss */
-#projects #vacation-charts .desc {
-  top: 75px;
+/* line 55, _projects.scss */
+#projects #pie-charting .snapshot {
+  top: -10px;
 }
-/* line 61, _projects.scss */
+/* line 58, _projects.scss */
+#projects #pie-charting .desc {
+  top: 105px;
+}
+/* line 63, _projects.scss */
 #projects #connect-four {
   height: 530px;
 }
-/* line 64, _projects.scss */
+/* line 66, _projects.scss */
 #projects #connect-four .snapshot {
   top: 15px;
 }
-/* line 67, _projects.scss */
+/* line 69, _projects.scss */
 #projects #connect-four .desc {
   top: 75px;
 }
-/* line 72, _projects.scss */
+/* line 74, _projects.scss */
 #projects #todos {
   height: 460px;
 }
-/* line 75, _projects.scss */
+/* line 77, _projects.scss */
 #projects #todos .snapshot {
   top: -120px;
 }
-/* line 78, _projects.scss */
+/* line 80, _projects.scss */
 #projects #todos .desc {
   top: 58px;
 }
-/* line 84, _projects.scss */
+/* line 86, _projects.scss */
 #projects #old-site .snapshot {
   top: 15px;
 }
-/* line 87, _projects.scss */
+/* line 89, _projects.scss */
 #projects #old-site .desc {
   top: 75px;
 }
-/* line 92, _projects.scss */
+/* line 94, _projects.scss */
 #projects #space-duel-game {
   margin-bottom: 100px;
 }
-/* line 95, _projects.scss */
+/* line 97, _projects.scss */
 #projects #space-duel-game .snapshot {
   text-align: center;
   top: -60px;
 }
-/* line 99, _projects.scss */
+/* line 101, _projects.scss */
 #projects #space-duel-game .snapshot img {
   width: 80%;
 }
-/* line 103, _projects.scss */
+/* line 105, _projects.scss */
 #projects #space-duel-game .desc {
   top: 75px;
 }
-/* line 108, _projects.scss */
+/* line 110, _projects.scss */
 #projects .desc {
   position: relative;
   right: -95px;
   display: inline-block;
   width: 45%;
 }
-/* line 116, _projects.scss */
+/* line 118, _projects.scss */
 #projects .tools {
   color: red;
   font-size: 18px;
 }
-/* line 121, _projects.scss */
+/* line 123, _projects.scss */
 #projects .tech-text {
   color: green;
   font-size: 16px;
@@ -306,45 +310,51 @@
   float: right;
   width: 200px;
   height: 200px;
+  margin-top: -45px;
 }
 
-/* line 20, _contact.scss */
+/* line 21, _contact.scss */
 .message-form {
   clear: both;
   padding-top: 50px;
 }
-
 /* line 25, _contact.scss */
+.message-form .title {
+  margin-top: 95px;
+}
+
+/* line 30, _contact.scss */
 .msg-form {
   float: left;
   width: 55%;
   margin-bottom: 55px;
 }
 
-/* line 31, _contact.scss */
+/* line 36, _contact.scss */
 .google-maps {
   float: right;
+  margin-top: 38px;
 }
 
-/* line 35, _contact.scss */
+/* line 41, _contact.scss */
 .name {
   width: 49.5%;
   margin-bottom: 25px;
 }
 
-/* line 41, _contact.scss */
+/* line 47, _contact.scss */
 .message, #email,
 #subject {
   width: 100%;
 }
 
-/* line 45, _contact.scss */
+/* line 51, _contact.scss */
 #email,
 #subject {
   margin-bottom: 25px;
 }
 
-/* line 51, _contact.scss */
+/* line 57, _contact.scss */
 .submit {
   float: right;
 }
@@ -438,7 +448,7 @@ hr {
 
 /* line 44, main.scss */
 .home-background {
-  height: 575px;
+  height: 430px;
   background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/ironman-tech2.png");
   background-color: #000;
   background-repeat: no-repeat;
@@ -448,7 +458,7 @@ hr {
 
 /* line 50, main.scss */
 .projects-background {
-  height: 575px;
+  height: 430px;
   background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/marvel-heroes.jpg");
   background-color: #000;
   background-repeat: no-repeat;
@@ -458,7 +468,7 @@ hr {
 
 /* line 56, main.scss */
 .resume-background {
-  height: 575px;
+  height: 430px;
   background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/avengers2.jpg");
   background-color: #000;
   background-repeat: no-repeat;
@@ -468,7 +478,7 @@ hr {
 
 /* line 62, main.scss */
 .about-background {
-  height: 575px;
+  height: 430px;
   background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/avengers2.jpg");
   background-color: #000;
   background-repeat: no-repeat;
@@ -478,7 +488,7 @@ hr {
 
 /* line 68, main.scss */
 .contact-background {
-  height: 575px;
+  height: 430px;
   background-image: linear-gradient(rgba(61, 60, 60, 0.7), rgba(61, 60, 60, 0.7)), url("/images/iron-man-black.jpg");
   background-color: #000;
   background-repeat: no-repeat;

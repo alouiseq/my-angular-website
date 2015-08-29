@@ -10,7 +10,7 @@ define(['angular', './pieCharts', './pieChartsService', './pieSlicesService'], f
      */
     angular.module('pieChartsApp.features', [
         'pieChartsApp.directives.pieCharts',
-        'pieChartsApp.services.pieCharts'
+        'pieChartsApp.services.pieCharts',
         'pieChartsApp.services.pieSlices'
     ]);
     

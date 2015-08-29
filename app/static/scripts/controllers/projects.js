@@ -1,4 +1,4 @@
-define(['angular', 'connectFour/main', 'ngHighcharts', 'vacationCharts/main'], function (angular) {
+define(['angular', 'connectFour/main', 'ngHighcharts', 'pieCharting/main'], function (angular) {
 
     'use strict';
 
@@ -18,7 +18,7 @@ define(['angular', 'connectFour/main', 'ngHighcharts', 'vacationCharts/main'], f
             /*** DEFAULTS ***/
 
             $scope.title = 'Projects';
-            $scope.info = 'Personal / Home Efforts';
+            $scope.info = 'Personal Endeavors';
             var pageName = 'projects';
             var pageClass = 'projects-background';           
 
