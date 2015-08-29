@@ -21,10 +21,12 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     scope.showError = false;
                     scope.showChartForm = false;
                     scope.pieCharts = [];
+                    scope.chartType = [ 'Vacation', 'Finance'];
                     scope.newChart = {
-                        year: '',
+                        period: '',
                         title: '',
-                        description: ''
+                        description: '',
+                        slices: []
                     };
                     scope.showChart = {};
 

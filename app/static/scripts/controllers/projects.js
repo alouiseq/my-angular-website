@@ -19,7 +19,6 @@ define(['angular', 'connectFour/main', 'ngHighcharts', 'vacationCharts/main'], f
 
             $scope.title = 'Projects';
             $scope.info = 'Personal / Home Efforts';
-            $scope.chartType = 'Vacation';
             var pageName = 'projects';
             var pageClass = 'projects-background';           
 
