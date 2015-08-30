@@ -44,11 +44,11 @@ define(['angular'], function (angular) {
 			            },
 			            pieCharts: {
 			                link: 'sandbox',
-			                github: 'https://github.com/alouiseq/pie-chart-n-slices'
+			                github: 'https://github.com/alouiseq/pie-charting'
 			            },
 			            connectFour: {
 			                link: 'sandbox',
-			                github: ''
+			                github: 'https://github.com/alouiseq/connectFour'
 			            },
 			            spaceDuelGame: {
 			                github: 'https://github.com/alouiseq/space-duel'
