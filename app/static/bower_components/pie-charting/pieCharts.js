@@ -227,9 +227,9 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     /*** INITIALIZE ***/
 
                     // Dynamically add css to app
-                    if ($('body>style').length === 0) {
+                    // if ($('body>style').length === 0) {
                         $('body').prepend('<style>' + css + '</style>');
-                    }
+                    // }
                 }
             };
         });
