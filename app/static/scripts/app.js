@@ -22,6 +22,7 @@ define(['angular', 'controllers/main', 'directives/main', 'services/main'], func
             'ngRoute',
             'ngSanitize',
             'ngTouch',
+            'highcharts-ng',
             'ui.router',
         ])
         .value('urls', {

@@ -223,6 +223,10 @@
   color: green;
   font-size: 16px;
 }
+/* line 129, _projects.scss */
+#projects #pie-charts-modal .modal-lg {
+  height: 500px;
+}
 
 /* line 3, _resume.scss */
 #resume .languages > li,
@@ -308,8 +312,6 @@
 /* line 14, _contact.scss */
 .self-image {
   float: right;
-  width: 200px;
-  height: 200px;
   margin-top: -45px;
 }
 
@@ -653,14 +655,14 @@ a.anomaly {
 .sticky-title1 {
   top: -12px !important;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
 }
 
 /* line 214, main.scss */
 .sticky-title2 {
   top: 55px !important;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
 }
 
 /* line 220, main.scss */

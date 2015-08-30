@@ -1,4 +1,4 @@
-define(['angular', 'connectFour/main', 'ngHighcharts', 'pieCharting/main'], function (angular) {
+define(['angular', 'connectFour/main', 'pieCharting/main'], function (angular) {
 
     'use strict';
 

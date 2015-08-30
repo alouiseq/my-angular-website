@@ -16,7 +16,10 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                 restrict: 'EA',
                 template: template,
                 scope: {},
-                link: function (scope, css) {
+                link: function (scope) {
+
+                    /*** DEFAULTS ***/
+
                     scope.showCreateForm = false;
                     scope.showError = false;
                     scope.showChartForm = false;
@@ -26,15 +29,15 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                         period: '',
                         title: '',
                         description: '',
-                        slices: []
+                        data: []
                     };
                     scope.showChart = {};
 
 
-                    /*** METHODS ***/
+                    /*** PRIVATE METHODS ***/
 
                     // Set config options for highchart instances
-                    var setChartConfig = function (title, year, data, expenses) {
+                    var setChartConfig = function (title, period, data, expenses) {
                         var dataSeries = [];
 
                         // Get average expense           
@@ -85,11 +88,11 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                                 text: title
                             },
                             subtitle: {
-                                text: year
+                                text: period
                             },
                             series: [{
                                 type: 'pie',
-                                name: 'Visits',
+                                name: 'Frequency',
                                 data: data
                                 // data: [
                                 //     ['No Slice',   100.0],
@@ -104,14 +107,18 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                     };
 
                     var clear = function () {
+                        scope.newChart.period = '';
                         scope.newChart.title = '';
                         scope.newChart.description = '';
                     };
 
+
+                    /*** PUBLIC METHODS ***/
+
                     scope.fillChartInfo = function (chart) {
                         scope.showError=false;
                         scope.showChart.id = chart.id || scope.showChart.id;
-                        scope.newChart.year = chart.year;
+                        scope.newChart.period = chart.period;
                         scope.newChart.title = chart.title;
                         scope.newChart.description = chart.description;
                     };
@@ -121,7 +128,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                             function (data) {
                                 var chart = data;                     
                                 scope.showError = false;
-                                chart.chartConfig = setChartConfig(chart.title, chart.year, chart.data, chart.expenses);
+                                chart.chartConfig = setChartConfig(chart.title, chart.period, chart.data, chart.expenses);
                                 scope.pieCharts = [chart];
                                 $('#create-chart').modal('hide');
                                 clear();
@@ -139,7 +146,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                                 scope.pieCharts = data.charts;
                                 scope.showError = false;
                                 _.forEach(scope.pieCharts, function(pieChart) {
-                                    pieChart.chartConfig = setChartConfig(pieChart.title, pieChart.year, pieChart.data, pieChart.expenses);
+                                    pieChart.chartConfig = setChartConfig(pieChart.title, pieChart.period, pieChart.data, pieChart.expenses);
                                 });
                             },
                             function () {
@@ -153,7 +160,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                             function (data) {
                                 var chartInfo = data;
                                 scope.showError = false;
-                                chartInfo.chartConfig = setChartConfig(chartInfo.title, chartInfo.year, chart.data, chart.expenses);
+                                chartInfo.chartConfig = setChartConfig(chartInfo.title, chartInfo.period, chartInfo.data, chartInfo.expenses);
                                 scope.pieCharts = [chartInfo];
                                 scope.showChart.id = '';
                                 $('#show-chart').modal('hide');
@@ -195,7 +202,7 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                                     if (foundChart) {
                                         var chartIndex = _.indexOf(scope.pieCharts, foundChart);
                                         if (chartIndex > -1) {
-                                            scope.pieCharts[chartIndex].chartConfig = setChartConfig(scope.newChart.title, scope.newChart.year, scope.newChart.data, scope.newChart.expenses);
+                                            scope.pieCharts[chartIndex].chartConfig = setChartConfig(scope.newChart.title, scope.newChart.period, scope.newChart.data, scope.newChart.expenses);
                                         }            
                                     }    
                                     $('#update-chart').modal('hide');
@@ -208,6 +215,19 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                             }
                         );
                     };
+
+                    // explicitly close modals
+                    scope.closeModal = function(idModal) {
+                        $('#'+idModal).modal('hide');
+                    }
+
+
+                    /*** INITIALIZE ***/
+
+                    // Dynamically add css to app
+                    if ($('body>style').length === 0) {
+                        $('body').prepend('<style>' + css + '</style>');
+                    }
                 }
             };
         });

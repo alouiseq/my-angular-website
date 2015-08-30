@@ -17,7 +17,7 @@ def index ():
 charts = [
     { 
         'id': 1,
-        'year': 2015, 
+        'period': 2015, 
         'title': 'A Year to Remember', 
         'description': 'First year recorded',
         'createdAt': 'Tue Aug 18 22:57:36 2015',
@@ -86,14 +86,14 @@ def createChart ():
     chartId = chart_id
     chartId += 1
     now = time.strftime('%c')
-    if 'year' in chart and 'title' in chart:
+    if 'period' in chart and 'title' in chart:
         newChart = {
             'id': chartId,
-            'year': chart['year'],
+            'period': chart['period'],
             'title': chart['title'],
             'description': request.json.get('description', ''),
             'data': [
-                [ 'No Vacations set', 100 ]
+                [ 'Nothing set', 100 ]
             ],
             'createdAt': now,
             'updatedAt': now        
@@ -102,7 +102,7 @@ def createChart ():
         charts.append(newChart)
         return jsonify(newChart)
 
-    return make_response(jsonify({'error': 'Required: year and title'}), 404)
+    return make_response(jsonify({'error': 'Required: period and title'}), 404)
 
 
 # # Add a vacation to an existing chart
