@@ -1,4 +1,4 @@
-define(['angular', 'connectFour'], function (angular) {
+define(['angular', 'connectFour/main', 'pieCharting/main'], function (angular) {
 
     'use strict';
 
@@ -10,14 +10,15 @@ define(['angular', 'connectFour'], function (angular) {
      * Controller of the mywebsiteApp
      */
     angular.module('mywebsiteApp.controllers.ProjectsCtrl', [
-            'connectFourApp.directives.connectFour'
+            'connectFourApp.features',
+            'pieChartsApp.features'
         ])
         .controller('ProjectsCtrl', function ($scope, $timeout, Settings) {
 
             /*** DEFAULTS ***/
 
             $scope.title = 'Projects';
-            $scope.info = 'Personal / Home Efforts';
+            $scope.info = 'Personal Endeavors';
             var pageName = 'projects';
             var pageClass = 'projects-background';           
 

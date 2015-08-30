@@ -16,8 +16,15 @@ require.config({
         'underscore': '/bower_components/underscore/underscore',
         'lodash': '/bower_components/lodash/lodash',
         'text': '/bower_components/text/text',
-        'connectFour': '/bower_components/connectFour/src/connectFour',
-        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap'
+        'connectFour': '/bower_components/connectFour/src',
+        'pieCharting': '/bower_components/pie-charting',
+        'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
+        'bootstrapModal': '/bower_components/bootstrap/js/modal',
+        'ngHighcharts': '/bower_components/highcharts-ng/dist/highcharts-ng',
+        'highcharts': '/bower_components/highcharts/highcharts.src',
+        'highchartsAdapters': '/bower_components/highcharts/adapters/standalone-framework.src',
+        'highcharts-more': '/bower_components/highcharts/highcharts-more',
+        'exporting': '/bower_components/highcharts/modules/exporting',
 	},
 	shim: {
 		'angular': {
@@ -33,11 +40,15 @@ require.config({
         'ngSanitize': ['angular'],
         'ngTouch': ['angular'],
         'ui.router': ['angular'],
-        'bootstrap': ['jquery']
+        'bootstrap': ['jquery'],
+        'highcharts': ['highchartsAdapters'],
+        'ngHighcharts': ['highcharts', 'angular'],
+        'highcharts-more': ['highcharts'],
+        'exporting': ['highcharts']
 	}
 });
 
-	window.name = 'NG_DEFER_BOOTSTRAP!';
+window.name = 'NG_DEFER_BOOTSTRAP!';
 	
 require([
 	'angular',
@@ -51,11 +62,16 @@ require([
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngHighcharts',
     'ui.router',
 	'lodash',
 	'underscore',
     'text',
-    'bootstrap'
+    'bootstrap',
+    // 'bootstrapModal',
+    'highcharts',
+    'highcharts-more',
+    'exporting'
 ], function (angular, app) {
 	'use strict';
 

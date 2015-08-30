@@ -30,7 +30,7 @@ hr {
 }
 
 @mixin custom-navbar($image) {
-    height: 575px;
+    height: 430px;
     background-image:  
         linear-gradient(
             rgba(61, 60, 60, 0.7), 
@@ -208,13 +208,13 @@ a.anomaly {
 .sticky-title1 {
     top: -12px !important;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .sticky-title2 {
     top: 55px !important;
     position: fixed;
-    z-index: 9999;
+    z-index: 999;
 }
 
 .navbar-toggle {

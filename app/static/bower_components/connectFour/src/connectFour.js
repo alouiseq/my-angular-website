@@ -1,12 +1,12 @@
-define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!../bower_components/connectFour/src/sprites.css'], function (angular, connectFourTemplate, connectFourCss, spritesCss) {
+define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!./sprites.css'], function (angular, connectFourTemplate, connectFourCss, spritesCss) {
 
     'use strict';
 
     /**
      * @ngdoc function
-     * @name mywebsiteApp.directive:milestonesTimeline
+     * @name mywebsiteApp.directive:connectFour
      * @description
-     * # milestonesTimeline
+     * # connectFour
      * Directive of the mywebsiteApp
      */
 
@@ -19,10 +19,7 @@ define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!..
                 // css: connectFourCss,
                 link: function (css) {
 
-                    // Dynamically add css to app
-                    if ($('body>style').length === 0) {
-                        $('body').prepend('<style>' + connectFourCss + spritesCss + '</style>');
-                    }
+                    /*** PRIVATE METHODS ***/
 
                     // Module
                     var connectModule = (function() {
@@ -421,6 +418,11 @@ define(['angular', 'text!./connectFour.html', 'text!./connectFour.css', 'text!..
 
 
                     /*** INITIALIZE ***/
+
+                    // Dynamically add css to app
+                    if ($('body>style').length === 0) {
+                        $('body').prepend('<style>' + connectFourCss + spritesCss + '</style>');
+                    }
 
                     // Keep initial state of game board
                     var holdElem = document.getElementById('game-board');

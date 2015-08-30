@@ -1,0 +1,142 @@
+<div id="pie-charts">
+    <div class="row">
+        <div class="chart-options">
+            <input type="button" class="btn btn-success create-button" data-toggle="modal" data-target="#create-chart" value="Create a chart" ng-click="showError = false" />
+            <input type="button" class="btn btn-info list-button" value="List all charts" ng-click="listCharts()" ng-click="showError = false" />
+            <input type="button" class="btn btn-warning list-button" data-toggle="modal" data-target="#show-chart" value="Show a chart" ng-click="showError = false" />
+        </div>
+        <div id="create-chart" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content create-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="closeModal('create-chart')">x</button>
+                        <h4 class="modal-title">Create a pie chart for a new {{ chartType[0] | lowercase }}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="createForm" class="form-group" ng-submit="createChart()">
+                            <label for="create-period" class="labels">Period:</label>
+                            <input type="text" id="create-period" class="input-group" maxlength="30" required placeholder="period" ng-model="newChart.period" /><br/>
+                            <label for="create-title" class="labels">Title:</label>
+                            <input type="text" id="create-title" class="input-group extend-input-width" maxlength="60" required placeholder="title" ng-model="newChart.title" /><br/>                            
+                            <button type="submit" class="btn btn-primary input-group save">Save</button>
+                        </form>
+                        <div class="error-message" ng-show="showError">
+                            <em>Cannot complete request at this time...</em>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="show-chart" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="closeModal('show-chart')">x</button>
+                        <h4 class="modal-title">Get Chart for a specific {{ chartType[0] | lowercase }} period</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="showChartForm" class="form-group chart-info" ng-submit="showChartInfo()">
+                            <label for="show-chartid" class="labels">Chart ID:</label>
+                            <input type="text" id="show-chartid" class="chart-id" maxlength="20" required placeholder="chart id" ng-model="showChart.id" /><br/>
+                            <button type="submit" class="btn btn-primary input-group save">Get Chart</button>
+                        </form>
+                        <div class="error-message" ng-show="showError">
+                            <em>Cannot complete request at this time...</em>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="update-chart" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content update-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="closeModal('update-chart')">x</button>
+                        <h4 class="modal-title">Update a {{ chartType[0] | lowercase }} period</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="createForm" class="form-group" ng-submit="updateChart()">
+                            <label for="update-chartid" class="labels">Chart ID:</label>
+                            <input type="text" id="update-chartid" class="input-group" maxlength="20" disabled value="{{showChart.id}}" /><br/>
+                            <label for="update-period" class="labels">Period:</label>
+                            <input type="text" id="update-period" class="input-group" maxlength="30" required placeholder="period" ng-model="newChart.period" /><br/> 
+                            <label for="update-title" class="labels">Title:</label>
+                            <input type="text" id="update-title" class="input-group extend-input-width" maxlength="60" required placeholder="title" ng-model="newChart.title" /><br/>                            
+                            <button type="submit" class="btn btn-primary input-group save">Save</button>
+                        </form>
+                        <div class="error-message" ng-show="showError">
+                            <em>Cannot complete request at this time...</em>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div id="chart-{{$index}}" class="listCharts" ng-repeat="chart in pieCharts">
+            <highchart config="chart.chartConfig"></highchart>
+            <div class="chart-change">
+                <button class="btn btn-danger delete" ng-click="deleteChart(chart.id)">Delete Period</button>
+                <button class="btn btn-default update" data-toggle="modal" data-target="#update-chart" ng-click="fillChartInfo(chart)">Update Period</button>
+            </div>
+            <div class="slice-options">
+                <button class="btn btn-success" data-toggle="modal" data-target="#add-slice" ng-click="fillChartInfo(chart)">Add Slice</button>
+                <button class="btn btn-danger" ng-click="deleteSlice(chart.id)">Delete Slice</button>
+                <button class="btn" data-toggle="modal" data-target="#update-slice" ng-click="fillChartInfo(chart)">Update Slice</button>
+            </div>
+            <hr />
+        </div>
+        <div id="add-slice" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content create-slice">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="closeModal('add-slice')">x</button>
+                        <h4 class="modal-title">Add a {{ chartType[0] | lowercase }} to an existing period</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="createForm" class="form-group" ng-submit="addSlice()">                           
+                            <label for="add-name" class="labels">Name:</label>
+                            <input type="text" id="add-name" class="input-group extend-input-width" maxlength="60" required placeholder="name" ng-model="newSlice.name" /><br/>
+                            <label for="add-freq" class="labels">Frequency:</label>
+                            <input type="text" id="add-freq" class="input-group" maxlength="20" required placeholder="# of visits" ng-model="newSlice.frequency" /><br/>
+                            <label for="add-month" class="labels">Month:</label>
+                            <input type="text" id="add-month" class="input-group" maxlength="20" placeholder="December" ng-model="newSlice.month" /><br/>
+                            <label for="add-expense" class="labels">Expense ($):</label>
+                            <input type="text" id="add-expense" class="input-group" maxlength="20" placeholder="3000" ng-model="newSlice.expense" /><br/>                           
+                            <button type="submit" class="btn btn-primary input-group save">Save</button>
+                        </form>
+                        <div class="error-message" ng-show="showError">
+                            <em>Cannot complete request at this time...</em>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="update-slice" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content update-slice">
+                    <div class="modal-header">
+                        <button type="button" class="close" ng-click="closeModal('update-slice')">x</button>
+                        <h4 class="modal-title">Update {{ chartType[0] | lowercase }} information</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form name="createForm" class="form-group" ng-submit="updateSlice()">
+                            <label for="update-chartid" class="labels">Chart ID:</label>
+                            <input type="text" id="update-chartid" class="input-group" maxlength="60" disabled value="{{showChart.id}}" /><br/>
+                            <label for="update-name" class="labels">Name:</label>
+                            <input type="text" id="update-name" class="input-group extend-input-width" maxlength="60" placeholder="name" ng-model="newSlice.name" /><br/>
+                            <label for="update-freq" class="labels">Frequency:</label>
+                            <input type="text" id="update-freq" class="input-group" maxlength="20" placeholder="# of visits" ng-model="newSlice.frequency" /><br/>
+                            <label for="update-month" class="labels">Month:</label>
+                            <input type="text" id="update-month" class="input-group" maxlength="20" placeholder="December" ng-model="newSlice.month" /><br/>
+                            <label for="update-expense" class="labels">Expense ($):</label>
+                            <input type="text" id="update-expense" class="input-group" maxlength="20" placeholder="3000" ng-model="newSlice.expense" /><br/>
+                            <button type="submit" class="btn btn-primary input-group save adjust-margin">Save</button>
+                        </form>
+                        <div class="error-message" ng-show="showError">
+                            <em>Cannot complete request at this time...</em>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>

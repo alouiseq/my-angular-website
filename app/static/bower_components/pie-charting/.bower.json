@@ -1,0 +1,13 @@
+{
+  "name": "pie-charting",
+  "homepage": "https://github.com/alouiseq/pie-charting",
+  "_release": "ac353c7068",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ac353c7068f54f9671fcdec3f3697485efec7500"
+  },
+  "_source": "https://github.com/alouiseq/pie-charting.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/alouiseq/pie-charting.git"
+}

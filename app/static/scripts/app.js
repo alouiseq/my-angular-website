@@ -22,8 +22,13 @@ define(['angular', 'controllers/main', 'directives/main', 'services/main'], func
             'ngRoute',
             'ngSanitize',
             'ngTouch',
-            'ui.router'
+            'highcharts-ng',
+            'ui.router',
         ])
+        .value('urls', {
+            'baseUrl': '',
+            'pieChartsAPI': '/pieCharting/api/v1.0'
+        })
         .config(function ($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise('/home');
 
@@ -54,7 +59,10 @@ define(['angular', 'controllers/main', 'directives/main', 'services/main'], func
                     controller: 'ContactCtrl'
                 });
         })
-        .run(function () {
+        .run(function (urls, $window) {
+
+            // Set base url for http requests
+            urls.baseUrl = $window.location.origin;
 
             // Stickify and animate nav headers
             $(window).on('scroll', function () {

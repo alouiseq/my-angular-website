@@ -38,6 +38,10 @@ module.exports = function(config) {
       'app/static/bower_components/lodash/lodash.js',
       'app/static/bower_components/requirejs/require.js',
       'app/static/bower_components/text/text.js',
+      'app/static/bower_components/highcharts/highcharts.js',
+      'app/static/bower_components/highcharts/highcharts-more.js',
+      'app/static/bower_components/highcharts/modules/exporting.js',
+      'app/static/bower_components/highcharts-ng/dist/highcharts-ng.js',
       'app/static/bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",
