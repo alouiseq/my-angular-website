@@ -1,57 +1,76 @@
-input.ng-dirty.ng-invalid {
-  border-color: red;
+#pie-charts input.ng-dirty.ng-invalid {
+    border-color: red;
 }
 
-.error-message {
-  color: red;
+#pie-charts .error-message {
+    color: red;
 }
 
-.listCharts {
-  padding-top: 30px;
+#pie-charts .listCharts {
+    padding-top: 30px;
 }
 
-.container .row {
-  padding-bottom: 100px;
+#pie-charts .container .row {
+    padding-bottom: 100px;
 }
 
-.chart-change {
-  text-align: center;
-  margin-top: 35px;
+#pie-charts .chart-change {
+    text-align: center;
+    margin-top: 35px;
 }
 
-.create-content {
-  height: 325px;
-  width: 452px;
+#pie-charts .create-content {
+    height: 265px;
+    width: 452px;
 }
 
-.update-content {
-  height: 365px;
-  width: 453px;
+#pie-charts .update-content {
+    height: 365px;
+    width: 453px;
 }
 
-.save {
-  float: right;
+#pie-charts .create-slice {
+    height: 415px;
+    width: 452px;
 }
 
-.modal-sm > .modal-content {
-  height: 190px;
-  width: 420px;
-}
-.modal-sm > .modal-content button {
-  position: absolute;
-  top: 10px;
-  right: 25px;
+#pie-charts .update-slice {
+    height: 470px;
+    width: 452px;
 }
 
-#show-chartid {
-  width: 157px;
+#pie-charts .save {
+    float: right;
 }
 
-.chart-options {
-  text-align: center;
+#pie-charts .adjust-margin {
+    margin-top: -20px;
 }
 
-.slice-options {
-  text-align: center;
-  padding-top: 5px;
+#pie-charts .modal-sm > .modal-content {
+    height: 190px;
+    width: 420px;
 }
+#pie-charts .modal-sm > .modal-content button {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+#pie-charts #show-chartid {
+    width: 157px;
+}
+
+#pie-charts .chart-options {
+    text-align: center;
+}
+
+#pie-charts .slice-options {
+    text-align: center;
+    padding-top: 5px;
+}
+
+#pie-charts .extend-input-width {
+    width: 315px;
+}
+

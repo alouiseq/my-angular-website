@@ -106,10 +106,10 @@ def createChart ():
 
 
 # # Add a vacation to an existing chart
-# @app.route('/pieCharting/api/v1.0/addVacation/<chart_id>', methods=['POST'])
+# @app.route('/pieCharting/api/v1.0/addSlice/<chart_id>', methods=['POST'])
 # # @auth.login_required
-# def addVacation (chart_id):
-#     newVacation = request.json
+# def addSlice (chart_id):
+#     newSlice = request.json
 #     print len(chart)
 #     foundChart = [chart for chart in charts if chart['id'] == int(chart_id)]
 #     if len(foundChart) == 0:

@@ -216,6 +216,8 @@ define(['angular', 'text!./pieCharts.html', 'text!./pieCharts.css'], function (a
                         );
                     };
 
+                    
+
                     // explicitly close modals
                     scope.closeModal = function(idModal) {
                         $('#'+idModal).modal('hide');
